@@ -6,15 +6,15 @@ namespace empty_component {
 
 static const char *TAG = "empty_component.component";
 
-void EmptyComponent::setup() {
-
+void EmptyComponent::setup()
+{
+}
+void EmptyComponent::loop()
+{
 }
 
-void EmptyComponent::loop() {
-
-}
-
-void EmptyComponent::dump_config() {
+void EmptyComponent::dump_config()
+{
     ESP_LOGCONFIG(TAG, "Empty component");
 }
 
