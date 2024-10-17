@@ -10,13 +10,14 @@ CONF_BAUDRATESERIAL = 'BAUDRATESERIAL'
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
-        cv.Optional(CONF_BAUDRATESERIAL, default=115200): cv.int_,
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
-CONFIG_SCHEMA = cv.Schema({
-  cv.Optional(CONF_BAUDRATESERIAL, default=115200): cv.int_,
-}).extend(cv.COMPONENT_SCHEMA)
+CONFIG_SCHEMA = cv.Schema(
+    {
+        cv.Optional(CONF_BAUDRATESERIAL, default=115200): cv.int_,
+    }
+).extend(cv.COMPONENT_SCHEMA)
 
 
 async def to_code(config):
