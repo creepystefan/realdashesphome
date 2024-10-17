@@ -13,11 +13,18 @@ class EmptyComponent : public Component {
   Serial.begin(SERIALBAUDRATE);
   delay(100);
 }
-  
-
 
   void loop() override;
-  void dump_config() override;
+{
+
+  ReadDigitalStatuses();
+  ReadAnalogStatuses();
+  SendCANFramesToSerial();
+  delay(5);
+}
+
+ 
+void dump_config() override;
 };
 
 
