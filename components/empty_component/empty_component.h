@@ -70,6 +70,8 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 void dump_config() override;
 };
 
+}  // namespace empty_component
+}  // namespace esphome
 
 }  // namespace empty_component
 }  // namespace esphome
