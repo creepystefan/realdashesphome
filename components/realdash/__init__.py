@@ -14,6 +14,10 @@ CONFIG_SCHEMA = cv.Schema(
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
+CONFIG_SCHEMA = cv.Schema({
+  cv.Optional(CONF_BAUDRATESERIAL, default=115200): cv.int_,
+}).extend(cv.COMPONENT_SCHEMA)
+
 
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
