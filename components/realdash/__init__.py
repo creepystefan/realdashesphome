@@ -7,6 +7,13 @@ realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 CONF_SB = 'SEB'
 
+CurrentResolution = dps_ns.enum("CurrentResolution")
+CURRENT_RESOLUTION_OPTIONS = {
+    "9600": CurrentResolution.DPS_CURRENT_RESOLUTION_AUTO,
+    "11": CurrentResolution.DPS_CURRENT_RESOLUTION_LOW,
+    "HIGH": CurrentResolution.DPS_CURRENT_RESOLUTION_HIGH,
+}
+
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
@@ -22,3 +29,7 @@ async def to_code(config):
     cg.add(var.SEB(config[CONF_SB]))
     
 
+
+
+
+cv.Optional(CONF_CURRENT_RESOLUTION, default="AUTO"): cv.enum(
