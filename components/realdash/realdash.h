@@ -13,7 +13,7 @@ int analogPins[7] = {0};
 #define SERIALBAUDRATE      115200
 
 
-class REALDASHCOMPONENT : public Component {
+class REALDASH : public Component {
  public:
   
 void setup() override
