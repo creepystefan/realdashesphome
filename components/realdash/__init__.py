@@ -5,21 +5,12 @@ from esphome.const import CONF_ID
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
-CONF_SB = 'SEB'
-CONF_SB = realdash_ns.enum("CONF_SB")
-
-SERIAL'_BAUDRATE_OPTION = {
-    "9600": CurrentResolution.SB_BAUDRATE_9600,
-    "115200": CurrentResolution.SB_BAUDRATE_115200,
-}
+CONF_BAUDRATESERIAL = 'BAUDRATESERIAL'
 
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
-        cv.Optional(CONF_SB, default=115200): cv.enum(
-            SERIAL'_BAUDRATE_OPTION, upper=True
-            ),
-        
+        cv.Optional(CONF_BAUDRATESERIAL, default=115200): cv.int_,
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
@@ -27,11 +18,4 @@ CONFIG_SCHEMA = cv.Schema(
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
-
-    cg.add(var.SEB(config[CONF_SB]))
     
-
-
-
-
-cv.Optional(CONF_CURRENT_RESOLUTION, default="AUTO"): cv.enum(
