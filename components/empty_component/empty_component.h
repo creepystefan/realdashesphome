@@ -5,6 +5,13 @@
 namespace esphome {
 namespace empty_component {
 
+unsigned int digitalPins = 0;
+int analogPins[7] = {0};
+        
+#define FRAME_ID1           0x81c
+#define SERIALBAUDRATE      115200
+
+
 class EmptyComponent : public Component {
  public:
   void setup() override;
