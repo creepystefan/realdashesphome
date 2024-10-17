@@ -6,7 +6,7 @@ MULTI_CONF = True
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
-CONF_BAUDRATESERIAL = 'baudrateserial'
+CONF_BAUDRATESERIAL = "baud_rate_serial"
 
 CONFIG_SCHEMA = cv.Schema(
     {
@@ -22,4 +22,4 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
-    cg.add(var.set_baudrateserial(config[CONF_BAUDRATESERIAL]))
+    cg.add(var.set_baud_rate_serial(config[CONF_BAUDRATESERIAL]))
