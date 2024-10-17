@@ -11,7 +11,7 @@ unsigned int digitalPins = 0;
 int analogPins[7] = {0};
         
 #define FRAME_ID1           0x81c
-#define SERIALBAUDRATE      BAUDRATESERIAL
+#define SERIALBAUDRATE      "BAUDRATESERIAL"
 
 
 class REALDASH : public Component {
