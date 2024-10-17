@@ -3,8 +3,8 @@
 #include "esphome/core/component.h"
 #include "esphome.h"
 
-namespace esphome {
-namespace empty_component {
+namespace esphome 
+namespace empty_component 
 
 unsigned int digitalPins = 0;
 int analogPins[7] = {0};
@@ -70,7 +70,7 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 void dump_config() override;
 };
 
-}  // namespace empty_component
-}  // namespace esphome
+  // namespace empty_component
+  // namespace esphome
 
 
