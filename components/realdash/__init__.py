@@ -3,11 +3,11 @@ import esphome.config_validation as cv
 from esphome.const import CONF_ID
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
-REALDASH = realdash_ns.class_("REALDASH", cg.Component)
+REALDASHCOMPONENT = realdash_ns.class_("REALDASH", cg.Component)
 
 CONFIG_SCHEMA = cv.Schema(
     {
-        cv.GenerateID(): cv.declare_id(REALDASH),
+        cv.GenerateID(): cv.declare_id(REALDASHCOMPONENT),
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
