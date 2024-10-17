@@ -8,8 +8,8 @@ namespace realdash {
 
 enum CurrentResolution {
   SB_BAUDRATE_9600,
-  DPS_CURRENT_RESOLUTION_LOW,
-  DPS_CURRENT_RESOLUTION_HIGH,
+  SB_BAUDRATE_115200,
+  
 
 unsigned int digitalPins = 0;
 int analogPins[7] = {0};
