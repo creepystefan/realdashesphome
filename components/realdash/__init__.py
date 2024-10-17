@@ -9,9 +9,9 @@ CONF_SB = 'SEB'
 
 CurrentResolution = dps_ns.enum("CurrentResolution")
 CURRENT_RESOLUTION_OPTIONS = {
-    "9600": CurrentResolution.DPS_CURRENT_RESOLUTION_AUTO,
-    "11": CurrentResolution.DPS_CURRENT_RESOLUTION_LOW,
-    "HIGH": CurrentResolution.DPS_CURRENT_RESOLUTION_HIGH,
+    "9600": CurrentResolution.DPS_CURRENT_RESOLUTION_9600,
+    "115200": CurrentResolution.DPS_CURRENT_RESOLUTION_115200,
+    
 }
 
 CONFIG_SCHEMA = cv.Schema(
