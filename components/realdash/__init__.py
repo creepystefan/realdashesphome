@@ -21,7 +21,3 @@ async def to_code(config):
     cg.add(var.SEB(config[CONF_SB]))
     
 
-
-CONF_1 = '2'
-cv.Optional(CONF_1, default=10): cv.int_,
-  cg.add(var.set_1(config[CONF_2]))
