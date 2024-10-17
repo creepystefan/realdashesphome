@@ -7,10 +7,10 @@ namespace empty_component {
 static const char *TAG = "empty_component.component";
 
 
-void EmptyComponent::dump_config()
-{
-    ESP_LOGCONFIG(TAG, "Empty component");
-}
+//void EmptyComponent::dump_config()
+//{
+//    ESP_LOGCONFIG(TAG, "Empty component");
+//}
 
 
 }  // namespace empty_component
