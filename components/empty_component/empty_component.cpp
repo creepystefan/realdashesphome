@@ -14,7 +14,7 @@ void EmptyComponent::loop() {
 
 }
 
-void EmptyComponent::dump_config(){
+void EmptyComponent::dump_config() {
     ESP_LOGCONFIG(TAG, "Empty component");
 }
 
