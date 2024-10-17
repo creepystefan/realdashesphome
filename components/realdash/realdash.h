@@ -4,7 +4,7 @@
 #include "esphome.h"
 
 namespace esphome {
-namespace empty_component { 
+namespace realdash { 
 
 unsigned int digitalPins = 0;
 int analogPins[7] = {0};
@@ -13,7 +13,7 @@ int analogPins[7] = {0};
 #define SERIALBAUDRATE      115200
 
 
-class EmptyComponent : public Component {
+class Realdash : public Component {
  public:
   
 void setup() override
@@ -70,7 +70,7 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 //void dump_config() override
 };
 
-}  // namespace empty_component
+}  // namespace realdash
 }  // namespace esphome
 
 
