@@ -7,7 +7,7 @@ namespace esphome {
 namespace realdash { 
 
 enum CurrentResolution {
-  DPS_CURRENT_RESOLUTION_AUTO,
+  SB_BAUDRATE_9600,
   DPS_CURRENT_RESOLUTION_LOW,
   DPS_CURRENT_RESOLUTION_HIGH,
 
