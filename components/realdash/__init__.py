@@ -9,8 +9,8 @@ CONF_SB = 'SEB'
 CONF_SB = realdash_ns.enum("CONF_SB")
 
 SERIAL'_BAUDRATE_OPTION = {
-    "9600": CurrentResolution.DPS_CURRENT_RESOLUTION_9600,
-    "115200": CurrentResolution.DPS_CURRENT_RESOLUTION_115200,
+    "9600": CurrentResolution.SB_BAUDRATE_9600,
+    "115200": CurrentResolution.SB_BAUDRATE_115200,
 }
 
 CONFIG_SCHEMA = cv.Schema(
