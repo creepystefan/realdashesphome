@@ -16,13 +16,13 @@ int analogPins[7] = {0};
 class EmptyComponent : public Component {
  public:
   
-void setup() override;
+void setup() override
 {
   Serial.begin(SERIALBAUDRATE);
   delay(100);
 }
 
-void loop() override;
+void loop() override
 {
   ReadDigitalStatuses();
   ReadAnalogStatuses();
