@@ -18,7 +18,7 @@ class REALDASH : public Component {
   
 void setup() override
 {
-  Serial.begin(seB);
+  Serial.begin(SEB);
   delay(100);
 }
 
