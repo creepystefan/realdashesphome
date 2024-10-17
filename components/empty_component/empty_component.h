@@ -67,7 +67,7 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
   Serial.write(frameData, 8);
 }
 
-void dump_config() override;
+//void dump_config() override;
 };
 
 }  // namespace empty_component
