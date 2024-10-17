@@ -18,5 +18,5 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
-    cg.add(var.SERIALBAUDRATE(config[baudrate]))
+    cg.add(var.SERIALBAUDRATE(config[baudrate_rd]))
     //cg.add(var.baudrate_rd(config[CONF_MY_REQUIRED_KEY]))
