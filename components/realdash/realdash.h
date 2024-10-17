@@ -6,6 +6,11 @@
 namespace esphome {
 namespace realdash { 
 
+enum CurrentResolution {
+  DPS_CURRENT_RESOLUTION_AUTO,
+  DPS_CURRENT_RESOLUTION_LOW,
+  DPS_CURRENT_RESOLUTION_HIGH,
+
 unsigned int digitalPins = 0;
 int analogPins[7] = {0};
         
