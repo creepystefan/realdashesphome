@@ -4,6 +4,7 @@ from esphome.const import CONF_ID
 
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
+REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 CONF_BAUDRATESERIAL = 'BAUDRATESERIAL'
 
 CONFIG_SCHEMA = cv.Schema(
