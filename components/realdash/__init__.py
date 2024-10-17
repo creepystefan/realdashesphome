@@ -4,12 +4,12 @@ from esphome.const import CONF_ID
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
-SERIALBAUDRATE = 'baudrate_rd'
+SB = 'seB'
 
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
-        cv.Optional(SERIALBAUDRATE, default=115200): cv.int_,
+        cv.Optional(SB, default=115200): cv.int_,
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
@@ -18,5 +18,5 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
-    cg.add(var.SERIALBAUDRATE(config[baudrate_rd]))
-    //cg.add(var.baudrate_rd(config[CONF_MY_REQUIRED_KEY]))
+    cg.add(var.seB(cofig[SB]))
+    
