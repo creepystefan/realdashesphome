@@ -1,24 +1,18 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.components import fan
 from esphome.const import CONF_ID
 
-from .. import 44_ns
+realdash_ns = cg.esphome_ns.namespace("realdash")
+REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 
-144 = 44_ns.class_("REALDASH", cg.Component, realdash.Realdash)
-
-CONFIG_SCHEMA = realdash.Realdash_SCHEMA.extend(
+CONFIG_SCHEMA = cv.Schema(
     {
-        cv.GenerateID(CONF_OUTPUT_ID): cv.declare_id(144),
-        
+        cv.GenerateID(): cv.declare_id(REALDASH),
     }
 ).extend(cv.COMPONENT_SCHEMA)
-
-
 
 
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
-
     
