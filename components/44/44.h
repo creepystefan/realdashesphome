@@ -1,3 +1,6 @@
+#define FRAME_ID1           0x81c
+
+
 void SendCANFramesToSerial()
 {
   byte buf[8];
