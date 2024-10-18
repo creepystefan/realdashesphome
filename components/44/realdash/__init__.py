@@ -4,14 +4,15 @@ from esphome.const import CONF_ID
 from .. import 44_ns
 MULTI_CONF = True
 
+
+
 realdash_ns = cg.esphome_ns.namespace("realdash")
-REALDASH = realdash_ns.class_("REALDASH", cg.Component)
-CONF_BAUDRATESERIAL = "baudrateserial"
+REALDASH = 44_ns.class_("REALDASH", cg.Component, realdash.Realdash)
 
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
-        cv.Optional(CONF_BAUDRATESERIAL, default=115200): cv.int_,
+        
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
