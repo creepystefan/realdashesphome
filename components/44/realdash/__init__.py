@@ -7,9 +7,9 @@ from .. import 44_ns
 EmptyFan = empty_fan_ns.class_("EmptyFan", cg.Component, fan.Fan)
 REALDASH = 44_ns.class_("REALDASH", cg.Component, realdash.Realdash)
 
-CONFIG_SCHEMA = cv.Schema(
+CONFIG_SCHEMA = fan.FAN_SCHEMA.extend(
     {
-        cv.GenerateID(): cv.declare_id(REALDASH),
+        cv.GenerateID(CONF_OUTPUT_ID): cv.declare_id(144),
         
     }
 ).extend(cv.COMPONENT_SCHEMA)
