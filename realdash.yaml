@@ -1,0 +1,26 @@
+esphome:
+  name: realdash
+external_components:
+  - source: github://creepystefan/realdash-esphome
+  
+esp32:
+  board: esp32-c3-devkitm-1
+  variant: esp32c3 
+    
+logger:
+  
+ota:
+  platform: esphome
+  password: !secret otaxywfpow
+
+web_server:
+  port: 9005
+
+ 
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  
+captive_portal:
+
+realdash:
