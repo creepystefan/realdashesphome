@@ -10,7 +10,7 @@ namespace realdash {
 unsigned int digitalPins = 0;
 int analogPins[7] = {0};
         
-//#define FRAME_ID1           0x81c
+#define FRAME_ID1           0x81c
 #define SERIALBAUDRATE      115200
 
 
