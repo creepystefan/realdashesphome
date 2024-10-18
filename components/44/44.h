@@ -19,3 +19,6 @@ void SendCANFramesToSerial()
   memcpy(buf + 6, &analogPins[2], 2);
   SendCANFrameToSerial(FRAME_ID1, buf);
 }
+
+}  // namespace 44
+}  // namespace esphome
