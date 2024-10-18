@@ -4,8 +4,8 @@ from esphome.components import fan
 from esphome.const import CONF_ID
 
 from .. import 44_ns
-EmptyFan = empty_fan_ns.class_("EmptyFan", cg.Component, fan.Fan)
-REALDASH = 44_ns.class_("REALDASH", cg.Component, realdash.Realdash)
+
+144 = 44_ns.class_("REALDASH", cg.Component, realdash.Realdash)
 
 CONFIG_SCHEMA = fan.FAN_SCHEMA.extend(
     {
