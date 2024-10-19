@@ -9,7 +9,7 @@ CONF_RD_BAUDRATE = 'rd_baudrate'
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
-        cv.Optional(CONF_BD_RAEALDASH, default=115200): cv.string,
+        cv.Optional(CONF_RD_BAUDRATE, default=115200): cv.string,
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
