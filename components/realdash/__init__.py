@@ -3,8 +3,8 @@ import esphome.config_validation as cv
 from esphome.const import CONF_ID
 CONF_REAL_BAUD_RATE = 'rdbaudrate'
 
-realdash_ns = cg.esphome_ns.namespace("realdash")
-REALDASH = realdash_ns.class_("REALDASH", cg.Component)
+//realdash_ns = cg.esphome_ns.namespace("realdash")
+//REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 
 CONFIG_SCHEMA = cv.Schema(
     {
