@@ -19,7 +19,7 @@ class REALDASH : public Component {
   
 void setup() override
 {
-  Serial.begin(rd_baudrate);
+  Serial.begin(CONF_RD_BAUDRATE);
   delay(100);
 }
 
