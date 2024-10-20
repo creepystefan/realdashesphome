@@ -4,7 +4,7 @@ from esphome.const import CONF_ID
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
-CONF_RD_BAUDRATE = 'baud_rate'
+CONF_RD_BAUDRATE = 'rd_baudrate'
 
 CONFIG_SCHEMA = cv.Schema(
     {
@@ -19,7 +19,7 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
-    cg.add_define("baud_rate", config[CONF_RD_BAUDRATE])
+    cg.add_define("rd_baudrate", config[CONF_RD_BAUDRATE])
     
 
 
