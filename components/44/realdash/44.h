@@ -5,10 +5,6 @@
 
 namespace esphome {
 namespace 44 { 
-
-
-unsigned int digitalPins = 0;
-int analogPins[7] = {0};
         
 class REALDASH : public Component {
  public:
@@ -24,7 +20,6 @@ void SendCANFramesToSerial()
   SendCANFrameToSerial(rd_frame_id, buf);
 }
 
-//void dump_config() override
 };
 
 }  // namespace 44
