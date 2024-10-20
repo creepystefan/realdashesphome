@@ -12,9 +12,7 @@ CONFIG_SCHEMA = cv.Schema(
         cv.GenerateID(): cv.declare_id(REALDASH),
         cv.Optional(CONF_RD_BAUDRATE, default=115200): cv.int_,
         cv.Optional(CONF_FRAME_ID1, default=0x81c): cv.int_,
-
-        #define FRAME_ID1           0x81c
-        
+                
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
