@@ -6,7 +6,7 @@ realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 CONF_RD_BAUDRATE = 'baud_rate'
 
-CONFIG_SCHEMA = cv.all(
+CONFIG_SCHEMA = cv.SCHEMA(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
         cv.Optional(CONF_RD_BAUDRATE, default=115200): cv.int_,
