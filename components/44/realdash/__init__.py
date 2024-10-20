@@ -9,7 +9,7 @@ CONF_FRAME_ID1 = 'rd_frame_id1'
 
 EmptyFan = 44_ns.class_("EmptyFan", cg.Component, realdash.REALDASH)
 
-CONFIG_SCHEMA = cv.Schema(
+CONFIG_SCHEMA = realdash.REALDASH_SCHEMA.extend(
     {
         cv.GenerateID(): cv.declare_id(44),
         cv.Optional(CONF_FRAME_ID, default=0x81d): cv.int_,
