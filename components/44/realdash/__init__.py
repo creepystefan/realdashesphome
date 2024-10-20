@@ -7,6 +7,8 @@ realdash_ns = cg.esphome_ns.namespace("realdash")
 CONF_44 = 44_ns.class_("CONF_44", cg.Component)
 CONF_FRAME_ID1 = 'rd_frame_id1'
 
+EmptyFan = 44_ns.class_("EmptyFan", cg.Component, realdash.REALDASH)
+
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(44),
