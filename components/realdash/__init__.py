@@ -19,7 +19,7 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
-    cg.add(var.set_baud_rate(config[CONF_RD_BAUDRATE]))
+    cg.add_define("baud_rate", config[CONF_RD_BAUDRATE])
     
 
 
