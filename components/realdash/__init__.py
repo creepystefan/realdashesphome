@@ -10,6 +10,7 @@ CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
         cv.Optional(CONF_RD_BAUDRATE, default=115200): cv.int_,
+        
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
@@ -17,7 +18,7 @@ CONFIG_SCHEMA = cv.Schema(
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
-    await cg.get_variable(config[CONF_RD_BAUDRATE])
+    
 
 
     
