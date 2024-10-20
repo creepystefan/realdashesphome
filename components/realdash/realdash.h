@@ -11,15 +11,13 @@ unsigned int digitalPins = 0;
 int analogPins[7] = {0};
         
 #define FRAME_ID1           0x81c
-#define SERIALBAUDRATE      115200
-
 
 class REALDASH : public Component {
  public:
   
 void setup() override
 {
-  Serial.begin(baud_rate);
+  Serial.begin(rd_baudrate);
   delay(100);
 }
 
