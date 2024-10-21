@@ -10,7 +10,7 @@ FramE44 = empty_binary_output_ns.class_(
 
 CONFIG_SCHEMA = output.BINARY_OUTPUT_SCHEMA.extend(
     {
-        cv.Required(CONF_ID): cv.declare_id(EmptyBinaryOutput),
+        cv.Required(CONF_ID): cv.declare_id(FramE44),
         cv.Required(CONF_FRAME_ID): cv.int_,
     }
 ).extend(cv.COMPONENT_SCHEMA)
