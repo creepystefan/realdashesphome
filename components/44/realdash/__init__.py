@@ -1,7 +1,15 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.const import CONF_ID
+
+from esphome.const import (
+    CONF_ID,
+)
+
 from .. import 44_ns
+
+Realdash44 = template_ns.class_(
+    "TemplateSensor", realdash.Realdash, cg.PollingComponent
+
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
 CONF_44 = 44_ns.class_("CONF_44", cg.Component)
