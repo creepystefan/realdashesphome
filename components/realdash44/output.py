@@ -5,13 +5,13 @@ from esphome.const import CONF_ID
 
 realdash44_ns = cg.esphome_ns.namespace("realdash44")
 
-CANID = realdash44_ns.class_(
-    "CANID", output.REALDASH_ID, cg.Component
+CanId = realdash44_ns.class_(
+    "CanID", output.BinarOutput, cg.Component
 )
 
-CONFIG_SCHEMA = output.CAN_ID_SCHEMA.extend(
+CONFIG_SCHEMA = output.Binary_Output_SCHEMA.extend(
     {
-        cv.Required(CONF_ID): cv.declare_id(CANID),
+        cv.Required(CONF_ID): cv.declare_id(CanID),
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
