@@ -20,3 +20,4 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await output.register_output(var, config)
     await cg.register_component(var, config)
+    cg.add_define("rd_frame_id", config[CONF_FRAME_ID])
