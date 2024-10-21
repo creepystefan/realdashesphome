@@ -6,7 +6,7 @@ from esphome.const import CONF_ID
 realdash44_ns = cg.esphome_ns.namespace("realdash44")
 
 CANID = realdash44_ns.class_(
-    "CANID", output.CAN_ID, cg.Component
+    "CANID", output.REALDASH_ID, cg.Component
 )
 
 CONFIG_SCHEMA = output.CAN_ID_SCHEMA.extend(
