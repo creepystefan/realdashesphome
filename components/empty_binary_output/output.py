@@ -12,7 +12,7 @@ EmptyBinaryOutput = empty_binary_output_ns.class_(
 CONFIG_SCHEMA = output.BINARY_OUTPUT_SCHEMA.extend(
     {
         cv.Required(CONF_ID): cv.declare_id(EmptyBinaryOutput),
-        cv.Option(CONF_FRAME_ID, default:44c): cv.int_,
+        cv.Optional(CONF_FRAME_ID, default=0x44c): cv.int_,
         
     }
 ).extend(cv.COMPONENT_SCHEMA)
