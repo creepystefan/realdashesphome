@@ -12,6 +12,7 @@ EmptyBinaryOutput = empty_binary_output_ns.class_(
 CONFIG_SCHEMA = output.BINARY_OUTPUT_SCHEMA.extend(
     {
         cv.Required(CONF_ID): cv.declare_id(EmptyBinaryOutput),
+        cv.Required(CONF_FRAME_ID): cv.int_,
         
     }
 ).extend(cv.COMPONENT_SCHEMA)
@@ -22,4 +23,4 @@ async def to_code(config):
     await output.register_output(var, config)
     await cg.register_component(var, config)
 
-    cg.add_define("rd_frame_id1", config[EmptyBinaryOutput])
+    cg.add_define("rd_frame_id1", config[CONF_FRAME_ID])
