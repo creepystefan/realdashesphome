@@ -8,7 +8,7 @@ Frame44 = 44_ns.class_(
     "Frame44", realdash.44, cg.Component
 )
 
-CONFIG_SCHEMA = output.BINARY_OUTPUT_SCHEMA.extend(
+CONFIG_SCHEMA = realdash.BINARY_OUTPUT_SCHEMA.extend(
     {
         cv.Required(CONF_ID): cv.declare_id(Frame44),
         cv.Required(CONF_FRAME_ID): cv.int_,
