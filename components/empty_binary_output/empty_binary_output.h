@@ -4,9 +4,9 @@
 #include "esphome.h"
 
 namespace esphome {
-namespace realdash44 { 
+namespace empty_binary_output { 
         
-class REALDASH44 : public Component {
+class EmptyBinaryOutput : public Component {
  public:
 
 
@@ -22,5 +22,5 @@ void SendCANFramesToSerial()
 
 };
 
-}  // namespace realdash44
+}  // namespace empty_binary_output
 }  // namespace esphome
