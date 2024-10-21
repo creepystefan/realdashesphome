@@ -10,7 +10,6 @@ CONF_FRAME_ID1 = 'rd_frame_id1'
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
-        cv.Optional(CONF_RD_BAUDRATE, default=115200): cv.int_,
         cv.Optional(CONF_FRAME_ID1, default=0x81c): cv.int_,
                 
     }
@@ -21,7 +20,6 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
-    cg.add_define("rd_baudrate", config[CONF_RD_BAUDRATE])
     cg.add_define("rd_frame_id1", config[CONF_FRAME_ID1])
     
 
