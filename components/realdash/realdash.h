@@ -10,14 +10,12 @@ namespace realdash {
 unsigned int digitalPins = 0;
 int analogPins[7] = {0};
         
-//#define FRAME_ID1           0x81c
-
 class REALDASH : public Component {
  public:
   
 void setup() override
 {
-  Serial.begin(rd_baudrate);
+  Serial.begin(115200);
   delay(100);
 }
 
