@@ -6,7 +6,7 @@
 namespace esphome {
 namespace empty_binary_output { 
         
-class EmptyBinaryOutput : public Component {
+class EmptyBinaryOutput : public output::BinaryOutput, public Component {
  public:
 
 
