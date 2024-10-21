@@ -1,11 +1,11 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.components import output
+from esphome.components import realdash
 from esphome.const import CONF_ID
 
-empty_binary_output_ns = cg.esphome_ns.namespace("empty_binary_output")
-EmptyBinaryOutput = empty_binary_output_ns.class_(
-    "EmptyBinaryOutput", output.BinaryOutput, cg.Component
+frame_44_ns = cg.esphome_ns.namespace("frame_44")
+FramE44 = empty_binary_output_ns.class_(
+    "FramE44", realdash.44, cg.Component
 )
 
 CONFIG_SCHEMA = output.BINARY_OUTPUT_SCHEMA.extend(
