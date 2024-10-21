@@ -4,7 +4,7 @@ from esphome.components import realdash
 from esphome.const import CONF_ID
 
 frame_44_ns = cg.esphome_ns.namespace("frame_44")
-FramE44 = empty_binary_output_ns.class_(
+FramE44 = frame44_ns.class_(
     "FramE44", realdash.44, cg.Component
 )
 
