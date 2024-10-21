@@ -6,7 +6,7 @@ from esphome.const import (
 
 from .. import 44_ns
 Realdash44 = template_ns.class_("Realdash44", realdash.Realdash, cg.PollingComponent)
-CONF_FRAME_ID1 = 'rd_frame_id1'
+CONF_FRAME_ID1 = 'rd_frame_id'
 
 
 CONFIG_SCHEMA = realdash.REALDASH_SCHEMA(
