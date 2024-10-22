@@ -6,8 +6,10 @@
 namespace esphome {
 namespace 44 { 
 
-class TemplateBinaryOutput : public output::BinaryOutput {        
-class REALDASH : public Component {
+//  TemplateBinaryOutput = RealDash44Output
+
+class RealDash44Output : public output::BinaryOutput {        
+class RealDash44Output : public Component {
  public:
 
 
