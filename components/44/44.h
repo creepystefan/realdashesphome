@@ -5,7 +5,8 @@
 
 namespace esphome {
 namespace 44 { 
-        
+
+class TemplateBinaryOutput : public output::BinaryOutput {        
 class REALDASH : public Component {
  public:
 
