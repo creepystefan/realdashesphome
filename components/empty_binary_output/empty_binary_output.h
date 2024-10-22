@@ -11,7 +11,7 @@ class EmptyBinaryOutput : public output::BinaryOutput, public Component {
 
 void loop() override
 {
-  ReadDigitalStatuses();
+  SendCANFramesToSerial();
   delay(5);
 }
 
