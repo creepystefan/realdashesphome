@@ -1,7 +1,7 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from .. import realdash_ns
-from esphome.const import CONF_ID, CONF_TYPE, CONF_BINARY
+from esphome.const import CONF_ID
 from .. import template_ns
 from .. import realdash_ns
 
