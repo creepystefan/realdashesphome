@@ -9,6 +9,11 @@ namespace empty_binary_output {
 class EmptyBinaryOutput : public output::BinaryOutput, public Component {
  public:
 
+void loop() override
+{
+  ReadDigitalStatuses();
+  delay(5);
+}
 
 void SendCANFramesToSerial()
 {
