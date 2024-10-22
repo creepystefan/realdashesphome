@@ -8,8 +8,7 @@ namespace 44 {
 
 //  TemplateBinaryOutput = RealDash44Output
 
-class RealDash44Output : public output::BinaryOutput {        
-class RealDash44Output : public Component {
+class RealDash44Output : public output::Output44 {        
  public:
 
 
