@@ -17,7 +17,7 @@ void SendCANFramesToSerial()
   memcpy(buf + 2, &analogPins[0], 2);
   memcpy(buf + 4, &analogPins[1], 2);
   memcpy(buf + 6, &analogPins[2], 2);
-  SendCANFrameToSerial(rd_frame_id, buf);
+  SendCANFrameToSerial(0x01c, buf);
 }
 
 };
