@@ -5,8 +5,16 @@ from esphome.const import CONF_ID
 from .. import template_ns
 from .. import realdash_ns
 
-TemplateBinaryOutput = template_ns.class_("TemplateBinaryOutput", output.BinaryOutput)
-TemplateFloatOutput = template_ns.class_("TemplateFloatOutput", output.FloatOutput)
+     //  TemplateBinaryOutput = template_ns.class_("TemplateBinaryOutput", output.BinaryOutput)
+     //  TemplateFloatOutput = template_ns.class_("TemplateFloatOutput", output.FloatOutput)
+     //  TemplateBinaryOutput = RealDash44Output
+     //  TemplateFloatOutput  = RealDash44Float
+     //  BinaryOutput         = Output44
+     //  FloatOutput          = Float44
+
+RealDash44Output = 44_ns.class_("RealDash44Output", output.Output44)
+RealDash44Float = 44_ns.class_("RealDash44Float", output.Float44)
+
 
 CONF_FLOAT = "float"
 CONF_WRITE_ACTION = "write_action"
