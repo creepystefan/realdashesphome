@@ -11,27 +11,29 @@ from .. import realdash_ns
      //  TemplateFloatOutput  = RealDash44Float
      //  BinaryOutput         = Output44
      //  FloatOutput          = Float44
+     //  FLOAT_OUTPUT         = FLOAT_44
+     //  BINARY_OUTPUT        = BINARY_44
+     //  CONF_WRITE_ACTION    = 
 
 RealDash44Output = 44_ns.class_("RealDash44Output", output.Output44)
 RealDash44Float = 44_ns.class_("RealDash44Float", output.Float44)
-
 
 CONF_FLOAT = "float"
 CONF_WRITE_ACTION = "write_action"
 
 CONFIG_SCHEMA = cv.typed_schema(
     {
-        CONF_BINARY: output.BINARY_OUTPUT_SCHEMA.extend(
+        CONF_BINARY: output.BINARY_44_SCHEMA.extend(
             {
-                cv.GenerateID(): cv.declare_id(TemplateBinaryOutput),
+                cv.GenerateID(): cv.declare_id(RealDash44Output),
                 cv.Required(CONF_WRITE_ACTION): automation.validate_automation(
                     single=True
                 ),
             }
         ),
-        CONF_FLOAT: output.FLOAT_OUTPUT_SCHEMA.extend(
+        CONF_FLOAT: output.FLOAT_44_SCHEMA.extend(
             {
-                cv.GenerateID(): cv.declare_id(TemplateFloatOutput),
+                cv.GenerateID(): cv.declare_id(RealDash44Float),
                 cv.Required(CONF_WRITE_ACTION): automation.validate_automation(
                     single=True
                 ),
