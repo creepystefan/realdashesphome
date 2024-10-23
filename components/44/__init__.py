@@ -3,10 +3,9 @@ import esphome.config_validation as cv
 from esphome.const import CONF_ID
 from .. import realdash_ns
 
+CONF_FRAME_ID1 = 'rd_frame_id'
 
 RealDash44Output = 44_ns.class_("RealDash44Output", output.Output44)
-
-CONF_FRAME_ID1 = 'rd_frame_id'
 
 CONFIG_SCHEMA = cv.Schema(
     {
