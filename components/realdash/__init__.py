@@ -7,8 +7,6 @@ from esphome.cpp_generator import MockObjClass
 from esphome.cpp_helpers import setup_entity
 from esphome.util import Registry
 
-IS_PLATFORM_COMPONENT = True
-
 realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 CONF_RD_BAUDRATE = 'rd_baudrate'
