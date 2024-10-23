@@ -2,6 +2,11 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.const import CONF_ID
 
+from esphome.core import CORE, coroutine_with_priority
+from esphome.cpp_generator import MockObjClass
+from esphome.cpp_helpers import setup_entity
+from esphome.util import Registry
+
 IS_PLATFORM_COMPONENT = True
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
