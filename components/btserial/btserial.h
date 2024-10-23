@@ -28,3 +28,8 @@ void loop() {
   }
   delay(25);
 }
+
+};
+
+}  // namespace realdash
+}  // namespace esphome
