@@ -2,7 +2,6 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.const import CONF_ID
-from .. import realdash
 from .. import frame44_ns
 
 
