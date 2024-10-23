@@ -5,7 +5,7 @@
 #include "esphome.h"
 
 namespace esphome {
-namespace realdash { 
+namespace btserial { 
 
 
 class BTSERIAL : public Component {
@@ -31,5 +31,5 @@ void loop() {
 
 };
 
-}  // namespace realdash
+}  // namespace btserial
 }  // namespace esphome
