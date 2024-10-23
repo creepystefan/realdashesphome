@@ -12,6 +12,8 @@ class FRAME44 : public Component {
 
 void loop() override
 {
+  ReadDigitalStatuses();
+  ReadAnalogStatuses();
   SendCANFramesToSerial();
   delay(5);
 }
