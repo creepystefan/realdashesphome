@@ -1,37 +1,15 @@
 #pragma once
 
-#include "esphome/components/button/button.h"
-
-namespace esphome {
-namespace template_ {
-
-class TemplateButton : public button::Button {
- public:
-  // Implements the abstract `press_action` but the `on_press` trigger already handles the press.
-  void press_action() override{};
-};
-
-}  // namespace template_
-}  // namespace esphome
-
-
-
-
-
-
-
-
-
-#pragma once
 #include "../realdash/realdash.h"
+
 #include "esphome/core/component.h"
 #include "esphome.h"
 
 namespace esphome {
-namespace frame44 { 
+namespace frame44_ { 
 
 
-class FRAME44 : public Component {
+class FRAME44 : public realdash::Realdash {
  public:
 
 void loop() override
@@ -52,5 +30,5 @@ void SendCANFramesToSerial()
 
 };
 
-}  // namespace frame44
+}  // namespace frame44_
 }  // namespace esphome
