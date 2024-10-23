@@ -23,7 +23,7 @@ class TemplateButton : public button::Button {
 
 
 #pragma once
-
+#include "../realdash/realdash.h"
 #include "esphome/core/component.h"
 #include "esphome.h"
 
