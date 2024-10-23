@@ -10,3 +10,5 @@
      //  FLOAT_OUTPUT         = FLOAT_44
      //  BINARY_OUTPUT        = BINARY_44
      //  CONF_WRITE_ACTION    = 
+
+IS_PLATFORM_COMPONENT = True
