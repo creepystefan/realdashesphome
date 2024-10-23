@@ -1,22 +1,6 @@
-from esphome.components import button
-
-from .. import template_ns
-
-TemplateButton = template_ns.class_("TemplateButton", button.Button)
-
-CONFIG_SCHEMA = button.button_schema(TemplateButton)
-
-
-async def to_code(config):
-    await button.new_button(config)
-
-###################################################
-
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.const import CONF_ID
-from .. import frame44_ns
-
 
 frame44_ns = cg.esphome_ns.namespace("frame44")
 FRAME44 = frame44_ns.class_("FRAME44", frame44.Frame44)
