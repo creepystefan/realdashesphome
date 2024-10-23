@@ -7,7 +7,7 @@ namespace esphome {
 namespace frame44 { 
 
 
-class Frame44 : public Component {
+class FRAME44 : public Component {
  public:
 
 
