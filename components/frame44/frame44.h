@@ -5,7 +5,7 @@
 #include "esphome.h"
 
 namespace esphome {
-namespace frame44_ { 
+namespace frame44 { 
 
 
 class FRAME44 : public realdash::Realdash {
@@ -29,5 +29,5 @@ void SendCANFramesToSerial()
 
 };
 
-}  // namespace frame44_
+}  // namespace frame44
 }  // namespace esphome
