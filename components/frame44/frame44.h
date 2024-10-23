@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../realdash/realdash.h"
-
 #include "esphome.h"
 
 namespace esphome {
