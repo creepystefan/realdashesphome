@@ -19,13 +19,13 @@ void setup() override
   delay(100);
 }
 
-void loop() override
-{
-  ReadDigitalStatuses();
-  ReadAnalogStatuses();
-  //SendCANFramesToSerial();
-  delay(5);
-}
+//void loop() override
+//{
+//  ReadDigitalStatuses();
+//  ReadAnalogStatuses();
+//  //SendCANFramesToSerial();
+//  delay(5);
+//}
 
 void ReadDigitalStatuses()
 {
