@@ -7,8 +7,8 @@ namespace esphome {
 namespace realdash { 
 
 
-//unsigned int digitalPins = 0;
-//int analogPins[7] = {0};
+unsigned int digitalPins = 0;
+int analogPins[7] = {0};
         
 class REALDASH : public Component {
  public:
