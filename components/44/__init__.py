@@ -5,7 +5,6 @@ from .. import realdash_ns
 
 
 RealDash44Output = 44_ns.class_("RealDash44Output", output.Output44)
-RealDash44Float = 44_ns.class_("RealDash44Float", output.Float44)
 
 CONF_FRAME_ID1 = 'rd_frame_id'
 
