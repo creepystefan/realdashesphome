@@ -4,9 +4,8 @@
 #include "esphome.h"
 
 namespace esphome {
-namespace 44 { 
+namespace frame44 { 
 
-//  TemplateBinaryOutput = RealDash44Output
 
 class RealDash44Output : public output::Output44 {        
  public:
@@ -24,5 +23,5 @@ void SendCANFramesToSerial()
 
 };
 
-}  // namespace 44
+}  // namespace frame44
 }  // namespace esphome
