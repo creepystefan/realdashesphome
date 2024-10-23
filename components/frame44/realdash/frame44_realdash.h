@@ -2,7 +2,6 @@
 
 #include "../realdash/realdash.h"
 
-#include "esphome/core/component.h"
 #include "esphome.h"
 
 namespace esphome {
