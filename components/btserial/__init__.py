@@ -10,7 +10,7 @@ CONF_BTNAME = 'btname'
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(BTSERIAL),
-        cv.Optional(CONF_BTNAME, default=Realdash): cv.int_,
+        
                 
     }
 ).extend(cv.COMPONENT_SCHEMA)
@@ -20,4 +20,4 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
-    cg.add_define("btname", config[CONF_BTNAME])
+    
