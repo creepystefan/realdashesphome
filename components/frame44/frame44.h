@@ -10,6 +10,11 @@ namespace frame44 {
 class FRAME44 : public Component {
  public:
 
+void loop() override
+{
+  SendCANFramesToSerial();
+  delay(5);
+}
 
 void SendCANFramesToSerial()
 {
