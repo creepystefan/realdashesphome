@@ -23,8 +23,9 @@ void setup() override
 //{
 //  ReadDigitalStatuses();
 //  ReadAnalogStatuses();
-//  //SendCANFramesToSerial();
+//  SendCANFramesToSerial();
 //  delay(5);
+  SendCANFrameToSerial();
 //}
 
 //void ReadDigitalStatuses()
