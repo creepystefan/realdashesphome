@@ -10,7 +10,7 @@ CONF_FRAME_ID1 = 'rd_frame_id'
 
 CONFIG_SCHEMA = cv.Schema(
     {
-        cv.GenerateID(): cv.declare_id(REALDASH),
+        cv.GenerateID(): cv.declare_id(RealDash44Output),
         cv.Optional(CONF_FRAME_ID, default=0x81c): cv.int_,
                 
     }
