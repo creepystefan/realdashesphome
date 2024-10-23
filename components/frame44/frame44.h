@@ -6,6 +6,8 @@
 namespace esphome {
 namespace frame44 { 
 
+unsigned int digitalPins = 0;
+int analogPins[7] = {0};
 
 class FRAME44 : public Component {
  public:
