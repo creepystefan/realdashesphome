@@ -3,7 +3,7 @@ import esphome.config_validation as cv
 from esphome.const import CONF_ID
 
 frame44_ns = cg.esphome_ns.namespace("frame44")
-FRAME44 = frame44_ns.class_("FRAME44", frame44.Frame44)
+FRAME44 = frame44_ns.class_("FRAME44", cg.Component)
 
 CONF_FRAME_ID = 'rd_frame_id'
 
