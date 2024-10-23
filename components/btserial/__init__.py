@@ -3,8 +3,8 @@ import esphome.config_validation as cv
 from esphome.const import CONF_ID
 
 btserial_ns = cg.esphome_ns.namespace("btserial")
-BTSERIAL = realdash_ns.class_("BTSERIAL", cg.Component)
-CONF_RD_BAUDRATE = 'rd_baudrate'
+BTSERIAL = btserial_ns.class_("BTSERIAL", cg.Component)
+
 CONF_BTNAME = 'btname'
 
 CONFIG_SCHEMA = cv.Schema(
