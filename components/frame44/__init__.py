@@ -13,7 +13,7 @@ CONFIG_SCHEMA = cv.Schema(
         cv.Optional(CONF_FRAME_ID, default=0x81c): cv.int_,
                 
     }
-).extend(cv.frame44.frame44_SCHEMA)
+).extend(cv.COMPONENT_SCHEMA)
 
 
 async def to_code(config):
