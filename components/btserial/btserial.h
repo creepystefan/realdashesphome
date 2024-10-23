@@ -1,4 +1,15 @@
-#include "BluetoothSerial.h"
+//#include "BluetoothSerial.h"
+#pragma once
+
+#include "esphome/core/component.h"
+#include "esphome.h"
+
+namespace esphome {
+namespace realdash { 
+
+
+class BTSERIAL : public Component {
+ public:
 
 BluetoothSerial SerialBT;
 
