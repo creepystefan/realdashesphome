@@ -8,7 +8,7 @@ namespace esphome {
 namespace frame44 { 
 
 
-class FRAME44 : public realdash::Realdash {
+class FRAME44 : public Component {
  public:
 
 void loop() override
