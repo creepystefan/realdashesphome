@@ -7,7 +7,7 @@ namespace esphome {
 namespace frame44 { 
 
 
-class RealDash44Output : public output::Output44 {        
+class Frame44 : public Component {
  public:
 
 
