@@ -8,15 +8,16 @@
 namespace esphome {
 namespace btserial { 
 
+BluetoothSerial SerialBT;
 
 class BTSERIAL : public Component {
  public:
 
-BluetoothSerial SerialBT;
+//BluetoothSerial SerialBT;
 
 void setup() {
   Serial.begin(115200);
-  SerialBT.begin(); //Name des ESP32
+  SerialBT.begin(realdash); //Name des ESP32
   Serial.println("Der ESP32 ist bereit. Verbinde dich nun über Bluetooth.");
 }
 
