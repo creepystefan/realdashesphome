@@ -16,9 +16,11 @@ class REALDASH : public Component {
 void setup() override
 {
   Serial.begin(115200);
+        //////// Bluetooth ///////
   SerialBT.begin("ESP32test"); //Bluetooth device name
   Serial.println("The device started, now you can pair it with bluetooth!");
   delay(100);
+        //////////Bluetooth //////
 }
 
 void loop() override
@@ -28,13 +30,14 @@ void loop() override
   SendCANFramesToSerial();
   delay(5);
   SendCANFrameToSerial();
+     /////////Bluetooth ///////
   if (Serial.available()) {
     SerialBT.write(Serial.read());
   }
   if (SerialBT.available()) {
     Serial.write(SerialBT.read());
   }
-        
+    /////////Bluetooth//////////    
 }
 
 void ReadDigitalStatuses()
