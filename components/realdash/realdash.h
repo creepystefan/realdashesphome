@@ -25,8 +25,6 @@ void loop() override
   ReadAnalogStatuses();
   SendCANFramesToSerial();
   delay(5);
-  SendCANFrameToSerial();
- 
 }
 
 void ReadDigitalStatuses()
