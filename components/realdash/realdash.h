@@ -7,6 +7,7 @@
 namespace esphome {
 namespace realdash { 
 
+BluetoothSerial SerialBT;
 
 unsigned int digitalPins = 0;
 int analogPins[7] = {0};
