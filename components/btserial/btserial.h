@@ -3,7 +3,7 @@
 
 #include "esphome/core/component.h"
 #include "esphome.h"
-//#include "BluetoothSerial.h"
+#include "BluetoothSerial.h"
 
 namespace esphome {
 namespace btserial { 
