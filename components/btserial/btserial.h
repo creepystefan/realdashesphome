@@ -17,7 +17,7 @@ class BTSERIAL : public Component {
 
 void setup() {
   Serial.begin(115200);
-  SerialBT.begin("realdash"); //Name des ESP32
+  SerialBT.begin(REALDASH); //Name des ESP32
   Serial.println("Der ESP32 ist bereit. Verbinde dich nun über Bluetooth.");
 }
 
