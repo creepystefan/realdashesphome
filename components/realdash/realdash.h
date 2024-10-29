@@ -30,6 +30,9 @@ void SendCANFrameToSerial()
   Serial.write(serialBlockTag, 4);
   Serial.write(canID, 4);
   Serial.write(Data, 8);
-  
 }
 
+};
+
+}  // namespace realdash
+}  // namespace esphome
