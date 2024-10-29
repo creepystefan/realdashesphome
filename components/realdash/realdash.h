@@ -17,7 +17,7 @@ void setup() override
 void loop() override
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
-  const byte canID[4] = { (can_id) };
+  const byte canID[4] = { 0x1 };
   const byte Data[8] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
   Serial.write(serialBlockTag, 4);
   Serial.write(canID, 4);
