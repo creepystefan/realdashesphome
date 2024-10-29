@@ -20,6 +20,16 @@ void loop() override
  SendFrame();
 }
 
+void SendCANFramesToSerial()
+{
+  byte buf[8];
+  memcpy(buf, &digitalPins, 2);
+  memcpy(buf + 2, &analogPins[0], 2);
+  memcpy(buf + 4, &analogPins[1], 2);
+  memcpy(buf + 6, &analogPins[2], 2);
+  SendCANFrameToSerial(0xc55, buf);
+}
+
 void SendFrame()
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
