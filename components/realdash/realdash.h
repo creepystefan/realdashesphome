@@ -1,9 +1,20 @@
-void setup() 
+#pragma once
+
+#include "esphome/core/component.h"
+#include "esphome.h"
+
+
+namespace esphome {
+namespace realdash { 
+
+class REALDASH : public Component {
+ public:
+void setup() override
 {
   Serial.begin(115200);
 }
 
-void loop() 
+void loop() override
 {
   SendCANFrameToSerial();
   delay(5);
