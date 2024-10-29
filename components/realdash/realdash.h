@@ -16,14 +16,14 @@ void setup() override
 
 void dataframe()
 {
- data[0] = 0x01;
- data[1] = 0x02;
- data[2] = 0x03;
- data[3] = 0x04;
- data[4] = 0x05;
- data[5] = 0x06;
- data[6] = 0x07;
- data[7] = 0x08;
+ int data[0] = 0x01;
+ int data[1] = 0x02;
+ int data[2] = 0x03;
+ int data[3] = 0x04;
+ int data[4] = 0x05;
+ int data[5] = 0x06;
+ int data[6] = 0x07;
+ int data[7] = 0x08;
 }
   
 void loop() override
