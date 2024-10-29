@@ -14,6 +14,18 @@ void setup() override
   Serial.begin(115200);
 }
 
+void dataframe()
+{
+ data[0] = 50;
+ data[1] = 50;
+ data[2] = 50;
+ data[3] = 50;
+ data[4] = 50;
+ data[5] = 50;
+ data[6] = 50;
+ data[7] = 50;
+}
+  
 void loop() override
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
