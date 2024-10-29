@@ -25,10 +25,10 @@ void loop() override
 void SendCANFramesToSerial()
 {
   byte buf[8];
-  memcpy(buf, &digitalPins, 2);
-  memcpy(buf + 2, &analogPins[0], 2);
-  memcpy(buf + 4, &analogPins[1], 2);
-  memcpy(buf + 6, &analogPins[2], 2);
+  memcpy(buf, &'ff', 2);
+  memcpy(buf + 2, &'ff'[0], 2);
+  memcpy(buf + 4, &'ff'[1], 2);
+  memcpy(buf + 6, &'ff'[2], 2);
   SendCANFrameToSerial(0xc55, buf);
 }
 
