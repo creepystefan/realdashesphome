@@ -19,7 +19,7 @@ async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     await cg.register_component(var, config)
 
-    cg.add_define("can_id1", config[CONF_CAN_ID])
+    cg.add_define("can_id", config[CONF_CAN_ID])
     
 
 
