@@ -33,9 +33,9 @@ void SendCANFramesToSerial()
   SendCANFrameToSerial(0x1, buf);
 
   memcpy(buf, &'ff', 2);
-  memcpy(buf + 2, &'ff'[0], 2);
-  memcpy(buf + 4, &'ff'[1], 2);
-  memcpy(buf + 6, &'ff'[2], 2);
+  memcpy(buf + 2, &'ff'[3], 2);
+  memcpy(buf + 4, &'ff'[4], 2);
+  memcpy(buf + 6, &'ff'[5], 2);
   SendCANFrameToSerial(0x2, buf);
 }
 
