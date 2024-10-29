@@ -18,6 +18,8 @@ void setup() override
 void loop() override
 {
  SendFrame();
+ SendCANFramesToSerial();
+ 
 }
 
 void SendCANFramesToSerial()
@@ -38,7 +40,6 @@ void SendFrame()
   Serial.write(serialBlockTag, 4);
   Serial.write(canID, 4);
   Serial.write(Data, 8);
-  delay(5);
 }
 
 };
