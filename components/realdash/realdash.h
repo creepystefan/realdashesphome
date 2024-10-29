@@ -19,7 +19,7 @@ void loop() override
 {
  SendFrame();
  SendCANFramesToSerial();
- 
+ delay(5); 
 }
 
 void SendCANFramesToSerial()
