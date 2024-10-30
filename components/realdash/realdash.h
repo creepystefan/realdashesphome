@@ -19,7 +19,15 @@ void loop() override
   delay(5);
 }
 
-
+void SendCANFramesToSerial()
+{
+  byte buf[8];
+  memcpy(buf, &rpm, 2);
+  memcpy(buf + 2, 900, 2);
+  memcpy(buf + 4, 800, 2);
+  memcpy(buf + 6, 700, 2);
+  SendCANFrameToSerial(FRAME_ID1, buf);
+}
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
