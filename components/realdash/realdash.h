@@ -13,7 +13,11 @@ void setup() override
 {
   Serial.begin(115200);
 }
-
+void loop() override
+{
+  SendCANFramesToSerial();
+  delay(5);
+}
 
 
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
