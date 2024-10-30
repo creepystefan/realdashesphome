@@ -17,10 +17,10 @@ void setup() override
  void loop() override
 {
 byte msg2[4];
- msg2[0] = (uint8_t)44;
- msg2[1] = (uint8_t)33;
- msg2[2] = (uint8_t)22;
- msg2[3] = (uint8_t)11;
+ msg2[0] = 44;
+ msg2[1] = 33;
+ msg2[2] = 22;
+ msg2[3] = 11;
  
  const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };                  // fix Frame Start to READ 
   //const byte canID[4] = { 0x22 };                                             // CAN_ID Variable
