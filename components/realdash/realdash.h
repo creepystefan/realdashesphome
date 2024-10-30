@@ -22,10 +22,10 @@ void loop() override
 void SendCANFramesToSerial()
 {
   byte buf[8];
-  memcpy(buf, &rpm, 2);
-  memcpy(buf + 2, 10, 2);
-  memcpy(buf + 4, 9, 2);
-  memcpy(buf + 6, 11, 2);
+  memcpy(buf, &data0, 2);
+  memcpy(buf + 2, &data1, 2);
+  memcpy(buf + 4, &data2, 2);
+  memcpy(buf + 6, &data3, 2);
   SendCANFrameToSerial(0xc31, buf);
 }
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
