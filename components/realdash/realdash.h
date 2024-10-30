@@ -23,9 +23,9 @@ void SendCANFramesToSerial()
 {
   byte buf[8];
   memcpy(buf, &rpm, 2);
-  memcpy(buf + 2, 900, 2);
-  memcpy(buf + 4, 800, 2);
-  memcpy(buf + 6, 700, 2);
+  memcpy(buf + 2, &900, 2);
+  memcpy(buf + 4, &800, 2);
+  memcpy(buf + 6, &700, 2);
   SendCANFrameToSerial(0xc31, buf);
 }
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
