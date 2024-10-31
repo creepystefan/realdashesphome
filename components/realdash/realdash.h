@@ -7,10 +7,10 @@
 namespace esphome {
 namespace realdash { 
 
-unsigned int data0 = 1;
-unsigned int data1 = 2; 
-unsigned int data2 = 3; 
-unsigned int data3 = 4;  
+uint_16 data0 = 2815;
+uint_08 int data1 = 10; 
+int data2 = 11; 
+unsigned int data3 = 10;  
 
 class REALDASH : public Component {
  public:
