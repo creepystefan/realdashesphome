@@ -7,8 +7,8 @@
 namespace esphome {
 namespace realdash { 
 
-uint_16 data0 = 2815;
-uint_08 int data1 = 10; 
+uint16_t data0 = 2815;
+uint08_t int data1 = 10; 
 int data2 = 11; 
 unsigned int data3 = 10;  
 
