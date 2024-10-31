@@ -21,7 +21,23 @@ void setup() override
 void loop() override
 {
   SendCANFramesToSerial();
-  delay(5);
+ if (data0++ > 10000)
+  {
+    data0 = 500;
+  }
+  if (data1++ > 10000)
+  {
+    data1 = 10;
+  }
+  if (data2++ > 10000)
+  {
+    data2 = 0;
+  }
+  if (data3++ > 10000)
+  {
+    data3 = 0;
+  }
+ delay(5);
 }
 
 void SendCANFramesToSerial()
