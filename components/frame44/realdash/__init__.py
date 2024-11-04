@@ -1,11 +1,11 @@
-from esphome.components import button
+from .. import realdash
 
-from .. import template_ns
+from .. import frame44_ns
 
-TemplateButton = template_ns.class_("TemplateButton", button.Button)
+Frame44Realdash = frame44_ns.class_("Frame44Realdash", realdash.Realdash)
 
-CONFIG_SCHEMA = button.button_schema(TemplateButton)
+CONFIG_SCHEMA = realdash.realdash_schema(Frame44Realdash)
 
 
 async def to_code(config):
-    await button.new_button(config)
+    await realdash.new_realdash(config)
