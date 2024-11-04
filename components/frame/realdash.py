@@ -1,5 +1,5 @@
 import esphome.codegen as cg
-from .components import realdash
+from components import realdash
 from esphome.const import CONF_ID
 
 frame_ns = cg.esphome_ns.namespace('frame')
