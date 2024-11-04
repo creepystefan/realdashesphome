@@ -24,3 +24,27 @@ wifi:
 captive_portal:
 
 realdash:
+  - platform: frame44
+    can_id: 0x1
+    #Automatical creat Data_ID
+    #  (CAN_ID & DATA1)   (example 0x1data1)    
+    #  (CAN_ID & DATA2)   
+    #  (CAN_ID & DATA3)
+    #  (CAN_ID & DATA4)
+  - platform: frame44
+    can_id: 0x2
+    #  (CAN_ID & DATA1)   (example 0x2data1)    
+    #  (CAN_ID & DATA2)   
+    #  (CAN_ID & DATA3)
+    #  (CAN_ID & DATA4)
+
+    
+
+sensor:
+  - platform: ....
+    id: 0x1data1
+  - platform: ....
+    id: 0x1data2
+  - platform: ....
+    id: 0x2data1
+
