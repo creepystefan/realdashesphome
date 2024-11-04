@@ -28,7 +28,7 @@ realdash:
     can_id: 0x1
     #Automatical creat Data_ID
     #  (CAN_ID & DATA1)   (example 0x1data1)    
-    #  (CAN_ID & DATA2)   
+    #  (CAN_ID & DATA2)                     4 byte to serial to realdash
     #  (CAN_ID & DATA3)
     #  (CAN_ID & DATA4)
   - platform: frame44
