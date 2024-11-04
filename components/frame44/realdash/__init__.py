@@ -2,7 +2,7 @@ from .components import realdash
 
 from .. import frame44_ns
 
-Frame44Realdash = frame44_ns.class_("Frame44Realdash", realdash.Realdash)
+Frame44Realdash = frame44_ns.class_('Frame44Realdash', cg.Component)
 
 CONFIG_SCHEMA = realdash.realdash_schema(Frame44Realdash)
 
