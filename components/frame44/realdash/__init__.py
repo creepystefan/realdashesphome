@@ -1,4 +1,4 @@
-import realdash
+from esphome.components import realdash
 
 from .. import frame44_ns
 
