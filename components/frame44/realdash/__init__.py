@@ -1,4 +1,4 @@
-from .components import realdash
+import realdash
 
 from .. import frame44_ns
 
