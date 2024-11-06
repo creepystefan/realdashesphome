@@ -1,5 +1,6 @@
 import esphome.codegen as cg
-from components import realdash
+import "github.com/creepystefan/realdash-esphome/realdash"
+
 
 from .. import frame44_ns
 
