@@ -11,7 +11,7 @@ CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH44),
     #    cv.Required(CONF_CANID): cv.int_,
-        cv.Optional(CONF_FRAMEID, default=0x81c): cv.int_,           
+        cv.Optional(CONF_CANID, default=0x81c): cv.int_,           
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
