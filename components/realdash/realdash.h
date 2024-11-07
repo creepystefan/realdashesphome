@@ -14,7 +14,7 @@ unsigned int data3 = 10;
 
 class REALDASH : public PollingComponent {
  public:
-  REALDASH() : PollingComponent(50) {}
+  REALDASH() : PollingComponent(10) {}
 
 
 void setup() override
