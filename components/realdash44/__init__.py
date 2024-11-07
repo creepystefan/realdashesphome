@@ -3,7 +3,7 @@ import esphome.config_validation as cv
 from esphome.const import CONF_ID
 
 realdash44_ns = cg.esphome_ns.namespace("realdash44")
-REALDASH44 = realdash44_ns.class_("REALDASH44", cg.PollingComponent)
+REALDASH44 = realdash44_ns.class_("REALDASH44", cg.Component)
 
 CONF_CAN_ID = 'can_id'
 
