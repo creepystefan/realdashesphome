@@ -6,7 +6,7 @@ from esphome.const import CONF_ID
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
-CONF_CAN_ID = 'can_id'
+#CONF_CAN_ID = 'can_id'
 
 CONFIG_SCHEMA = cv.Schema(
     {
