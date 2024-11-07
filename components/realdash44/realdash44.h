@@ -5,16 +5,16 @@
 
 
 namespace esphome {
-namespace realdashcan { 
+namespace realdash44 { 
 
 uint16_t data0 = 2815;
 uint8_t data1 = 10; 
 int data2 = 11; 
 unsigned int data3 = 10;  
 
-class REALDASHCAN : public PollingComponent {
+class REALDASH44 : public PollingComponent {
  public:
-  REALDASHCAN() : PollingComponent(10) {}
+  REALDASH44() : PollingComponent(10) {}
 
 
 void setup() override
@@ -61,5 +61,5 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 }
 
 };
-}  // namespace realdashcan
+}  // namespace realdash44
 }  // namespace esphome
