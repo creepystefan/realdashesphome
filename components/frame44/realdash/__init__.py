@@ -1,6 +1,7 @@
 #import esphome.codegen as cg
 
-from github_com.creepystefan.realdashesphome import realdash
+with httpimport.remote_repo('https://github.com/creepystefan/realdashesphome'):
+import realdash
 
 
 from .. import frame44_ns
