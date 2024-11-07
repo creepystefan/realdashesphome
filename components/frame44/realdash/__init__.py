@@ -1,5 +1,7 @@
 #import esphome.codegen as cg
-from .frame44 import realdash
+import "github.com/creepystefan/realdash-esphome/realdash"
+import realdash
+
 from .. import frame44_ns
 
 Frame44Realdash = frame44_ns.class_("Frame44Realdash", realdash.Realdash)
