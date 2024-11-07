@@ -8,6 +8,11 @@ realdash_ns = cg.esphome_ns.namespace("realdash")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 CONF_CAN_ID = 'can_id'
 
+def validate_range(config):
+    if config[CONF_CAN_ID] <= 1:
+        raise cv.Invalid("Need CAN_ID: -id-")
+    return config
+
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH),
