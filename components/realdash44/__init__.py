@@ -1,6 +1,6 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.const import CONF_ID
+from esphome.const import CONF_ID, CONF_CANID
 
 realdash44_ns = cg.esphome_ns.namespace("realdash44")
 REALDASH44 = realdash44_ns.class_("REALDASH44", cg.Component)
