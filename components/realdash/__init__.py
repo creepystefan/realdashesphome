@@ -1,3 +1,3 @@
-import realdash
+from .realdash import realdash
 
 realdash_ns = cg.esphome_ns.namespace("realdash")
