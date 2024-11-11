@@ -5,16 +5,16 @@
 
 
 namespace esphome {
-namespace realdash { 
+namespace realdash44 { 
 
 uint16_t data0 = 2815;
 uint8_t data1 = 10; 
 int data2 = 11; 
 unsigned int data3 = 10;  
 
-class REALDASH : public PollingComponent,   {
+class Realdash44 : public PollingComponent,   {
  public:
-  REALDASH() : PollingComponent(10) {}
+  Realdash44() : PollingComponent(10) {}
 
 
 
@@ -62,5 +62,5 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 }
 
 };
-}  // namespace realdash
+}  // namespace realdash44
 }  // namespace esphome
