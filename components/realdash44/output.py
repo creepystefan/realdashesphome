@@ -4,7 +4,7 @@ from esphome.components import output
 from esphome.const import CONF_ID
 
 realdash44_ns = cg.esphome_ns.namespace("realdash44")
-Realdash44 = empty_binary_output_ns.class_(
+Realdash44 = realdash44_ns.class_(
     "Realdash44", output.Output, cg.Component
 )
 
