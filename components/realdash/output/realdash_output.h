@@ -12,9 +12,10 @@ uint8_t data1 = 10;
 int data2 = 11; 
 unsigned int data3 = 10;  
 
-class REALDASH : public PollingComponent {
+class REALDASH : public PollingComponent, public button::Button { {
  public:
   REALDASH() : PollingComponent(10) {}
+
 
 
 void setup() override
