@@ -2,9 +2,7 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.const import CONF_ID
 
-#IS_PLATFORM_COMPONENT = True
-
-realdash_ns = cg.esphome_ns.namespace("realdash")
+realdash_ns = cg.esphome_ns.namespace("output")
 REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 #CONF_CAN_ID = 'can_id'
 
