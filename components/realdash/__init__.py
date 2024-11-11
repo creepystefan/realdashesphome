@@ -1,26 +1,20 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.const import CONF_ID
+from esphome.components import output
 
-realdash_ns = cg.esphome_ns.namespace("output")
-REALDASH = realdash_ns.class_("REALDASH", cg.Component)
-#CONF_CAN_ID = 'can_id'
+from .. import realdash_ns
 
-CONFIG_SCHEMA = cv.Schema(
-    {
-        cv.GenerateID(): cv.declare_id(REALDASH),
-   #     cv.Required(CONF_CAN_ID): cv.int_,
-                
-    }
-).extend(cv.COMPONENT_SCHEMA)
+RealdashOutput = realdash_ns.class_("RealdashOutput", realdash.Realdash)
+
+CONFIG_SCHEMA = button.button_schema(RealdashOutput)
 
 
 async def to_code(config):
-    var = cg.new_Pvariable(config[CONF_ID])
-    await cg.register_component(var, config)
+    await button.new_output(config)
 
-  #  cg.add_define("can_id", config[CONF_CAN_ID])
-    
+
+
 
 
     
