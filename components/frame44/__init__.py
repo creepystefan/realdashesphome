@@ -4,13 +4,13 @@ from esphome.const import CONF_ID
 
 #IS_PLATFORM_COMPONENT = True
 
-realdash_ns = cg.esphome_ns.namespace("realdash")
-REALDASH = realdash_ns.class_("REALDASH", cg.Component)
+frame44_ns = cg.esphome_ns.namespace("frame44")
+FRAME44 = frame44_ns.class_("FRAME44", cg.Component)
 #CONF_CAN_ID = 'can_id'
 
 CONFIG_SCHEMA = cv.Schema(
     {
-        cv.GenerateID(): cv.declare_id(REALDASH),
+        cv.GenerateID(): cv.declare_id(FRAME44),
    #     cv.Required(CONF_CAN_ID): cv.int_,
                 
     }
