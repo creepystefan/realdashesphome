@@ -14,7 +14,7 @@ unsigned int data3 = 10;
 
 class Real_dash44 : public output::BinaryOutput, public PollingComponent  {
  public:
-  Realdash44() : PollingComponent(10) {}
+  Real_dash44() : PollingComponent(10) {}
 
 
 
