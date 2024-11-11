@@ -12,7 +12,7 @@ uint8_t data1 = 10;
 int data2 = 11; 
 unsigned int data3 = 10;  
 
-class REALDASH : public PollingComponent, public realdash::Realdash  {
+class REALDASH : public PollingComponent,   {
  public:
   REALDASH() : PollingComponent(10) {}
 
