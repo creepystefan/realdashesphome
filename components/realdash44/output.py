@@ -9,7 +9,7 @@ Realdash44 = realdash44_ns.class_(
    
 )
 
-CONFIG_SCHEMA = output.Realdash44.extend(
+CONFIG_SCHEMA = output.BinaryOutput.extend(
     {
         cv.Required(CONF_ID): cv.declare_id(Realdash44),
     }
