@@ -1,4 +1,4 @@
-from .. import realdash
+from . import realdash
 from .. import frame44_ns
 
 Frame44Realdash = frame44_ns.class_("Frame44Realdash", realdash.Realdash)
