@@ -2,7 +2,7 @@
 
 #include "esphome/core/component.h"
 #include "esphome.h"
-
+#include "esphome/components/output/binary_output.h"
 
 namespace esphome {
 namespace realdash44 { 
