@@ -12,7 +12,7 @@ uint8_t data1 = 10;
 int data2 = 11; 
 unsigned int data3 = 10;  
 
-class Realdash44 : public PollingComponent,   {
+class Real_dash44 : public output::BinaryOutput, public PollingComponent  {
  public:
   Realdash44() : PollingComponent(10) {}
 
