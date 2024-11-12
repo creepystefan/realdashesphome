@@ -9,10 +9,11 @@ namespace esphome {
 namespace btserial { 
 
 BluetoothSerial SerialBT;
+String device_name = "ESP32-BT-Slave";
 
 class BTSERIAL : public Component {
  public:
-String device_name = "ESP32-BT-Slave";
+
 
 //BluetoothSerial SerialBT;
 
