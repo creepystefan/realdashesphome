@@ -12,12 +12,13 @@ BluetoothSerial SerialBT;
 
 class BTSERIAL : public Component {
  public:
+String device_name = "ESP32-BT-Slave";
 
 //BluetoothSerial SerialBT;
 
 void setup() {
   Serial.begin(115200);
-  SerialBT.begin(ESP32BT); //Name des ESP32
+  SerialBT.begin(device_name);
   Serial.println("Der ESP32 ist bereit. Verbinde dich nun über Bluetooth.");
 }
 
