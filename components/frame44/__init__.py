@@ -1,7 +1,7 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.const import CONF_ID
-import realdash
+from . import realdash
 
 #IS_PLATFORM_COMPONENT = True
 
