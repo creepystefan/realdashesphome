@@ -7,7 +7,7 @@
 namespace esphome {
 namespace bleserial { 
 
-BleSerial ble;
+bleSerial ble;
 
 class BLESERIAL : public Component {
  public:
@@ -15,17 +15,17 @@ class BLESERIAL : public Component {
 void setup()
 {
     Serial.begin(115200);
-    ble.begin("BleSerialTest");
+    ble.begin("bleSerialTest");
     Serial.println("Der ESP32 ist bereit. Verbinde dich nun über Bluetooth.");
 }
 
 void loop() {
   if (Serial.available()) {
     ble.write(Serial.read());
-    SerialBLE.flush();
+    Serialble.flush();
   }
-  if (SerialBLE.available()) {
-    Serial.write(SerialBLE.read());
+  if (Serialble.available()) {
+    Serial.write(Serialble.read());
   }
   delay(25);
 }
