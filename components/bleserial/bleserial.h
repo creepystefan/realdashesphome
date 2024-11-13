@@ -2,32 +2,30 @@
 
 #include "esphome/core/component.h"
 #include "esphome.h"
-#include <BleSerial.h>
+#include <BLESerial.h>
 
 namespace esphome {
 namespace bleserial { 
 
-bleSerial ble;
+BLESerial<> SerialBLE;
 
 class BLESERIAL : public Component {
  public:
 
-void setup()
-{
-    Serial.begin(115200);
-    ble.begin("bleSerialTest");
+void setup() {
+    Serial.begin(9600);
+    SerialBLE.begin();
     Serial.println("Der ESP32 ist bereit. Verbinde dich nun über Bluetooth.");
 }
 
 void loop() {
-  if (Serial.available()) {
-    ble.write(Serial.read());
-    Serialble.flush();
-  }
-  if (Serialble.available()) {
-    Serial.write(Serialble.read());
-  }
-  delay(25);
+    if (Serial.available()) {
+        SerialBLE.write(Serial.read());
+        SerialBLE.flush();
+    }
+    if (SerialBLE.available()) {
+        Serial.write(SerialBLE.read());
+    }
 }
 
 };
