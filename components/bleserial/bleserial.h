@@ -14,14 +14,22 @@ class BLESERIAL : public Component {
 
 void setup()
 {
-    //Start the BLE Serial
-    //Enter the Bluetooth name here
+    Serial.begin(115200);
     ble.begin("BleSerialTest");
+    Serial.println("Der ESP32 ist bereit. Verbinde dich nun über Bluetooth.");
 }
 
-void loop()
-{
-    //The usage is similar to Serial
-    ble.println("Hello!");
-    delay(1000);
+void loop() {
+  if (Serial.available()) {
+    ble.write(Serial.read());
+  }
+  if (SerialBLE.available()) {
+    Serial.write(SerialBLE.read());
+  }
+  delay(25);
 }
+
+};
+
+}  // namespace btserial
+}  // namespace esphome
