@@ -22,6 +22,7 @@ void setup()
 void loop() {
   if (Serial.available()) {
     ble.write(Serial.read());
+    SerialBLE.flush();
   }
   if (SerialBLE.available()) {
     Serial.write(SerialBLE.read());
