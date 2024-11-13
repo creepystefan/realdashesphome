@@ -19,7 +19,7 @@ class BTSERIAL : public Component {
 
 void setup() {
   Serial.begin(115200);
-  SerialBT.begin(device_name);
+  SerialBT.begin();
   Serial.println("Der ESP32 ist bereit. Verbinde dich nun über Bluetooth.");
 }
 
