@@ -26,6 +26,7 @@ void loop() {
     if (SerialBLE.available()) {
         Serial.write(SerialBLE.read());
     }
+  delay(25);
 }
 
 };
