@@ -14,8 +14,8 @@ class BLESERIAL : public Component {
 
 void setup() {
     Serial.begin(9600);
-    SerialBLE.begin();
-    Serial.println("Der ESP32 ist bereit. Verbinde dich nun über Bluetooth.");
+    SerialBLE.begin("Realdash");
+    
 }
 
 void loop() {
