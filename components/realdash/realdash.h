@@ -1,8 +1,8 @@
+
 #pragma once
 
 #include "esphome/core/component.h"
 #include "esphome.h"
-
 
 namespace esphome {
 namespace realdash { 
@@ -21,6 +21,7 @@ void setup() override
 {
   Serial.begin(115200);
 }
+
 void update() override
 {
   SendCANFramesToSerial();
