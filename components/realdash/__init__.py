@@ -22,5 +22,6 @@ async def to_code(config):
     await cg.register_component(var, config)
     
     cg.add(var.set_update_interval(conf[CONF_INTERVAL]))
+    
   #  cg.add_define("can_id", config[CONF_CAN_ID])
     
