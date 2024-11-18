@@ -1,13 +1,3 @@
-
-
-
-
-void setup() {
-    Serial.begin(115200);
-    SerialBLE.begin("Realdash");
-    
-}
-
 void loop() {
     if (Serial.available()) {
         SerialBLE.write(Serial.read());
@@ -88,6 +78,7 @@ void SendCANFramesToSerial()
   memcpy(buf + 4, &data2, 2);
   memcpy(buf + 6, &data3, 2);
   SendCANFrameToSerial(0x1, buf);
+  SendCANFrameToBle(0x1, buf);
 }
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
@@ -95,6 +86,13 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
   Serial.write(serialBlockTag, 4);
   Serial.write((const byte*)&canFrameId, 4);
   Serial.write(frameData, 8);
+}
+void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
+{
+  const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
+  SerialBLE.write(serialBlockTag, 4);
+  SerialBLE.write((const byte*)&canFrameId, 4);
+  SerialBLE.write(frameData, 8);
 }
 
 };
