@@ -13,7 +13,7 @@ class BLESERIAL : public Component {
  public:
 
 void setup() {
-//    Serial.begin(9600);
+    Serial.begin(115200);
     SerialBLE.begin("Realdash");
     
 }
