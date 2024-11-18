@@ -1,12 +1,47 @@
 
+
+
+
+void setup() {
+    Serial.begin(115200);
+    SerialBLE.begin("Realdash");
+    
+}
+
+void loop() {
+    if (Serial.available()) {
+        SerialBLE.write(Serial.read());
+        SerialBLE.flush();
+    }
+    if (SerialBLE.available()) {
+        Serial.write(SerialBLE.read());
+    }
+  delay(25);
+}
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
 #pragma once
 
 #include "esphome/core/component.h"
 #include "esphome.h"
+#include <BLESerial.h>
 
 namespace esphome {
 namespace realdash { 
 
+BLESerial<> SerialBLE;
 uint16_t data0 = 2815;
 uint8_t data1 = 10; 
 int data2 = 11; 
@@ -20,6 +55,7 @@ class REALDASH : public PollingComponent {
 void setup() override
 {
   Serial.begin(115200);
+  SerialBLE.begin("Realdash");
 }
 
 void update() override
