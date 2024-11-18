@@ -1,27 +1,3 @@
-void loop() {
-    if (Serial.available()) {
-        SerialBLE.write(Serial.read());
-        SerialBLE.flush();
-    }
-    if (SerialBLE.available()) {
-        Serial.write(SerialBLE.read());
-    }
-  delay(25);
-}
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
 #pragma once
 
 #include "esphome/core/component.h"
