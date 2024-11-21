@@ -5,7 +5,7 @@
 
 
 namespace esphome {
-namespace realdash { 
+namespace frame44_ { 
 
 
 uint16_t data0 = 2815;
@@ -14,9 +14,10 @@ int data2 = 11;
 unsigned int data3 = 10;  
 int can_id_;
 
-class REALDASH : public PollingComponent {
+class RealdashFrame44 : public realdash::Realdash, public PollingComponent  {
+//class REALDASH : public PollingComponent {
  public:
-  REALDASH() : PollingComponent(10) {}
+  RealdashFrame44() : PollingComponent(10) {}
 
 void set_can_id(int can_id) { can_id_ = can_id; }
 
@@ -67,5 +68,5 @@ void SendCANFramesToSerial()
 
 
 };
-}  // namespace realdash
+}  // namespace frame44_
 }  // namespace esphome
