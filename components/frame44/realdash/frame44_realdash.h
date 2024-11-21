@@ -17,6 +17,7 @@ class REALDASH : public PollingComponent {
  public:
   REALDASH() : PollingComponent(10) {}
 
+void set_can_id() { can_id_ = can_id; }
 
 void setup() override
 {
