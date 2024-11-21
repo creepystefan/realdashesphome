@@ -21,5 +21,5 @@ async def to_code(config):
     
     #cg.add(var.set_SendCANFramesToSerial_realdash(conf[CONF_CAN_ID]))
     #cg.add_define("can_id", config[CONF_CAN_ID])
-    cg.add(var.set_can_id(config[CONF_CAN_ID]))
+    cg.add(var.can_id(config[CONF_CAN_ID]))
     
