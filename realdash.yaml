@@ -8,6 +8,7 @@ esp32:
   variant: esp32c3 
     
 logger:
+  baud_rate: 0
   
 ota:
   platform: esphome
