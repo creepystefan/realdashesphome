@@ -25,3 +25,7 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
   Serial.write((const byte*)&canFrameId, 4);
   Serial.write(frameData, 8);
 }
+
+};
+}  // namespace realdash
+}  // namespace esphome
