@@ -3,7 +3,7 @@ import esphome.config_validation as cv
 from esphome.const import CONF_ID
 from esphome.components import realdash
 
-frame44_ns = cg.esphome_ns.namespace("frame44")
+frame44_ns = cg.esphome_ns.namespace("frame44_")
 RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
 #RealdashFrame44 = frame44_ns.class_("RealdashFrame44", realdash.Realdash)
 CONF_CAN_ID = 'can_id'
