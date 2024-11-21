@@ -1,1 +1,1 @@
-from esphome.components import realdash
+from .. import realdash
