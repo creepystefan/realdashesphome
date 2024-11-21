@@ -11,7 +11,7 @@ CONF_CAN_ID = 'can_id'
 #CONFIG_SCHEMA = cv.Schema(
 CONFIG_SCHEMA = realdash.realdash_schema(RealdashFrame44)
     {
-        cv.GenerateID(): cv.declare_id(Frame44),
+        cv.GenerateID(): cv.declare_id(RealdashFrame44),
         cv.Required(CONF_CAN_ID): cv.int_,
                 
     }
