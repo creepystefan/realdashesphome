@@ -15,7 +15,7 @@ unsigned int data3 = 10;
 int can_id_;
 
 //class RealdashFrame44 : public realdash::Realdash, public PollingComponent  {
-class REALDASH : public PollingComponent {
+class RealdashFrame44 : public PollingComponent {
  public:
   RealdashFrame44() : PollingComponent(10) {}
 
