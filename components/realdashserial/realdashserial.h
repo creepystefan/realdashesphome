@@ -7,9 +7,9 @@
 namespace esphome {
 namespace realdashserial { 
 
-class REALDASHSERIAL : public PollingComponent {
+class REALDASHSERIAL : public Component {
  public:
-  REALDASHSERIAL() : PollingComponent(10) {}
+ # REALDASHSERIAL() : PollingComponent(10) {}
 
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
