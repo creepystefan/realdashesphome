@@ -5,11 +5,11 @@
 
 
 namespace esphome {
-namespace realdash { 
+namespace realdashserial { 
 
-class REALDASH : public PollingComponent {
+class REALDASHSERIAL : public PollingComponent {
  public:
-  REALDASH() : PollingComponent(10) {}
+  REALDASHSERIAL() : PollingComponent(10) {}
 
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
@@ -20,5 +20,5 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 }
 
 };
-}  // namespace realdash
+}  // namespace realdashserial
 }  // namespace esphome
