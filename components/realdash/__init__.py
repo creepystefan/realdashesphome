@@ -4,8 +4,7 @@ from .. import realdash_ns
 
 IS_PLATFORM_COMPONENT = True
 
-frame44_ns = cg.esphome_ns.namespace("frame44_")
-RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
+REALDASH = realdash_ns.class_("REALDASH", cg.Component)
 
 CONFIG_SCHEMA = cv.Schema()
 
