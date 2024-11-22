@@ -1,6 +1,5 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from .. import realdash_ns
 
 IS_PLATFORM_COMPONENT = True
 
