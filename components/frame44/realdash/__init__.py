@@ -19,7 +19,10 @@ CONFIG_SCHEMA = cv.Schema(
 
 
 async def to_code(config):
-    var = cg.new_Pvariable(config[CONF_ID])
+    var = cg.new_Pvariable(
+        config[CONF_ID],
+        config[CONF_CAN_ID],
+    )
     await cg.register_component(var, config)
     #await button.new_button(config)
     
