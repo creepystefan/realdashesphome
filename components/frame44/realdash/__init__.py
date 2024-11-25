@@ -10,7 +10,7 @@ frame44_ns = cg.esphome_ns.namespace("frame44_")
 RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
 #RealdashFrame44 = frame44_ns.class_("RealdashFrame44", realdash.Realdash)
 #CONF_CAN_ID = 'can_id'
-#CONF_ADDRESS = 'address'
+CONF_ADDRESS = 'address'
 
 CONFIG_SCHEMA = cv.Schema(
 #CONFIG_SCHEMA = realdash.realdash_schema(RealdashFrame44)
