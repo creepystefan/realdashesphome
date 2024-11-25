@@ -17,9 +17,9 @@ uint16_t data0 = 2815;
 uint8_t data1 = 10; 
 int data2 = 11; 
 unsigned int data3 = 10;  
-int address;
+int canid;
 
-void set_can_id(int address) { address_ = address; }
+void set_canid(int canid) { canid_ = canid; }
 
 void setup() override
 {
@@ -56,7 +56,7 @@ void SendCANFramesToSerial()
   memcpy(buf + 2, &data1, 2);
   memcpy(buf + 4, &data2, 2);
   memcpy(buf + 6, &data3, 2);
-  SendCANFrameToSerial(address_, buf);
+  SendCANFrameToSerial(canid_, buf);
 }
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
