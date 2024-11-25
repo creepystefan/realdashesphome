@@ -26,7 +26,7 @@ async def to_code(config):
     await cg.register_component(var, config)
     #await button.new_button(config)
     
-    cg.add(var.set_can_id(config[CONF_CAN_ID]))
+#    cg.add(var.set_can_id(config[CONF_CAN_ID]))
 
 
 
