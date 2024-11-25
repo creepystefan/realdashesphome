@@ -31,7 +31,7 @@ async def to_code(config):
     #await button.new_button(config)
     
     #cg.add(var.set_can_id(config[CONF_CAN_ID]))
-    cg.add(var.set_can_id(config[CONF_ADDRESS]))
+    cg.add(var.set_address(config[CONF_ADDRESS]))
 
 
 
