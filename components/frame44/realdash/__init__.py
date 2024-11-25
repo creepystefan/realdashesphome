@@ -24,7 +24,7 @@ async def to_code(config):
         )
     await cg.register_component(var, config)
         
-    cg.add(var.set_can_id(config[CONF_CANID]))
+    cg.add(var.set_canid(config[CONF_CANID]))
     
 
 
