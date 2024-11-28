@@ -13,6 +13,13 @@ RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
 #RealdashFrame44 = frame44_ns.class_("RealdashFrame44", realdash.Realdash)
 CONF_CANID = 'canid'
 
+def validate_modbus_number(config):
+    if CONF_CANID not in config:
+        raise cv.Invalid(
+            f" {CONF_CANID} is a required property"
+        )
+    return config
+
 #CONFIG_SCHEMA = cv.Schema(
 #CONFIG_SCHEMA = realdash.realdash_schema(RealdashFrame44)
 CONFIG_SCHEMA = realdash.realdash_schema(
