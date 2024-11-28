@@ -4,8 +4,8 @@ from esphome.components import realdash
 from esphome.const import (CONF_ID)
 
 frame44_ns = cg.esphome_ns.namespace("frame44_")
-#RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
-RealdashFrame44 = frame44_ns.class_("RealdashFrame44", realdash.Realdash)
+RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
+#RealdashFrame44 = frame44_ns.class_("RealdashFrame44", realdash.Realdash)
 CONF_CANID = 'canid'
 
 #CONFIG_SCHEMA = cv.Schema(
