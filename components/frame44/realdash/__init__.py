@@ -20,9 +20,9 @@ CONF_CANID = 'canid'
 #        )
 #    return config
 
-#CONFIG_SCHEMA = cv.Schema(
+CONFIG_SCHEMA = cv.Schema(
 #CONFIG_SCHEMA = realdash.realdash_schema(RealdashFrame44)
-CONFIG_SCHEMA = realdash.realdash_schema(
+#CONFIG_SCHEMA = realdash.realdash_schema(
     {
         cv.GenerateID(): cv.declare_id(RealdashFrame44),
         cv.Required(CONF_CANID): cv.int_,
