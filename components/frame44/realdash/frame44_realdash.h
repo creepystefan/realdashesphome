@@ -19,7 +19,7 @@ int data2 = 11;
 unsigned int data3 = 10;  
 int canid;
 
-void set_canid(int canid) { canid_ = canid; }
+void set_canid(int canid) { canid = canid; }
 
 void setup() override
 {
