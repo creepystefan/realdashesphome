@@ -1,3 +1,3 @@
 import esphome.codegen as cg
 
-empty_fan_ns = cg.esphome_ns.namespace('frame44')
+frame44_ns = cg.esphome_ns.namespace('frame44')
