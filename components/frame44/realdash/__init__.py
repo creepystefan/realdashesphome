@@ -8,19 +8,10 @@ DEPENDENCIES = ["logger"]
 
 frame44_ns = cg.esphome_ns.namespace("frame44_")
 RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
-#RealdashFrame44 = frame44_ns.class_("RealdashFrame44", realdash.Realdash)
 CONF_CANID = 'canid'
 
-def validate_can_id(config):
-    if CONF_CANID not in config:
-        raise cv.Invalid(
-            f" {CONF_CANID} is a required property"
-        )
-    return config
 
 CONFIG_SCHEMA = cv.Schema(
-#CONFIG_SCHEMA = realdash.realdash_schema(RealdashFrame44)
-#CONFIG_SCHEMA = realdash.realdash_schema(
     {
         cv.GenerateID(): cv.declare_id(RealdashFrame44),
         cv.Required(CONF_CANID): cv.int_,
