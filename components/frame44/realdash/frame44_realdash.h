@@ -9,9 +9,9 @@ namespace frame44_ {
 
 
 //class RealdashFrame44 : public realdash::Realdash, public PollingComponent  {
-//class RealdashFrame44 : public PollingComponent {
-// public:
-//  RealdashFrame44() : PollingComponent(10) {}
+class RealdashFrame44 : public PollingComponent {
+ public:
+  RealdashFrame44() : PollingComponent(10) {}
 
 uint16_t data0 = 2815;
 uint8_t data1 = 10; 
@@ -48,9 +48,9 @@ void update() override
   }
  delay(5);
 }
-class RealdashFrame44 : public PollingComponent {
- public:
-  RealdashFrame44() : PollingComponent(10) {}
+//class RealdashFrame44 : public PollingComponent {
+// public:
+//  RealdashFrame44() : PollingComponent(10) {}
 void SendCANFramesToSerial()
 {
   byte buf[8];
@@ -60,7 +60,7 @@ void SendCANFramesToSerial()
   memcpy(buf + 6, &data3, 2);
   SendCANFrameToSerial(canid, buf);
 }
-};
+//};
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
@@ -68,7 +68,7 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
   Serial.write((const byte*)&canFrameId, 4);
   Serial.write(frameData, 8);
 }
-
+};
 
 }  // namespace frame44_
 }  // namespace esphome
