@@ -20,8 +20,9 @@ CONFIG_SCHEMA = cv.Schema(
 ).extend(cv.COMPONENT_SCHEMA)
 
 async def to_code(config):
+    paren = await cg.get_variable(config[CONF_ID])
     var = cg.new_Pvariable(
-        config[CONF_ID],
+        #config[CONF_ID],
         #config[CONF_CANID],
         )
     await cg.register_component(var, config)
