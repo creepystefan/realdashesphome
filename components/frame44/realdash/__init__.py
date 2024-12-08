@@ -3,9 +3,6 @@ import esphome.config_validation as cv
 from esphome.components import realdash
 from esphome.const import (CONF_ID)
 
-CODEOWNERS = ["@creepystefan"]
-DEPENDENCIES = ["logger"]
-
 frame44_ns = cg.esphome_ns.namespace("frame44_")
 RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
 CONF_CANID = 'canid'
