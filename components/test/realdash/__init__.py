@@ -3,7 +3,7 @@ import esphome.config_validation as cv
 from esphome.components import realdash
 from esphome.const import (CONF_ID)
 
-test_ns = cg.esphome_ns.namespace("test")
+test_ns = cg.esphome_ns.namespace("test_")
 RealdashTest = test_ns.class_("RealdashTest", cg.Component)
 CONF_CANID = 'canid'
 
