@@ -4,7 +4,7 @@ from esphome.components import realdash
 from esphome.const import (CONF_ID)
 
 test_ns = cg.esphome_ns.namespace("test")
-RealdashTest = frame44_ns.class_("RealdashTest", cg.Component)
+RealdashTest = test_ns.class_("RealdashTest", cg.Component)
 CONF_CANID = 'canid'
 
 
