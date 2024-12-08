@@ -4,13 +4,13 @@ from esphome.components import realdash
 from esphome.const import (CONF_ID)
 
 test_ns = cg.esphome_ns.namespace("test")
-RealdashTest = frame44_ns.class_("RealdashFrame44", cg.Component)
+RealdashTest = frame44_ns.class_("RealdashTest", cg.Component)
 CONF_CANID = 'canid'
 
 
 CONFIG_SCHEMA = cv.Schema(
     {
-        cv.GenerateID(): cv.declare_id(RealdashTEST),
+        cv.GenerateID(): cv.declare_id(RealdashTest),
         cv.Required(CONF_CANID): cv.int_,
                 
     }
