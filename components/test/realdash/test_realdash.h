@@ -14,7 +14,7 @@ class RealdashTest : public PollingComponent {
 
 int canid;
 
-//void set_canid(int canid) { canid = canid; }
+//void set_canid(int canid;) { canid = canid; }
 void set_canid(int canid)
 
 void setup() override
