@@ -32,7 +32,7 @@ void SendCANFrameToSerial()
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
   const byte realdashdata[8] = { 0x44, 0x33, 0x22, 0x11, 0x11, 0x22, 0x33, 0x44 };
   Serial.write(serialBlockTag, 4);
-  Serial.write(canid, 4);
+  Serial.write(canid);
   Serial.write(realdashdata, 8);
 }
 };
