@@ -23,7 +23,7 @@ void setup() override
 
 void update() override
 {
- SendCANFramesToSerial();
+ //SendCANFramesToSerial();
  delay(5);
 }
 
