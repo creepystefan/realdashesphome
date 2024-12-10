@@ -12,9 +12,9 @@ class RealdashTest : public PollingComponent {
  public:
   RealdashTest() : PollingComponent(10) {}
 
-int canid;
+//int canid;
 
-void set_canid(int canid) { canid = canid; }
+//void set_canid(int canid) { canid = canid; }
 
 void setup() override
 {
