@@ -58,11 +58,11 @@ void SendCANFramesToSerial()
   memcpy(buf + 2, &data1, 2);
   memcpy(buf + 4, &data2, 2);
   memcpy(buf + 6, &data3, 2);
-  #SendCANFrameToSerial(canid, buf);
+  //SendCANFrameToSerial(canid, buf);
   RealdashFrame44(canid, buf);
 }
 //};
-#void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
+//void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 void RealdashFrame44(unsigned long canFrameId, const byte* frameData)
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
