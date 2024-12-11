@@ -4,14 +4,15 @@ from esphome.components import realdash
 from esphome.const import (CONF_ID)
 
 frame44_ns = cg.esphome_ns.namespace("frame44_")
-#RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
-SendCANFrameToSerial = frame44_ns.class_("SendCANFrameToSerial", cg.Component)
+RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
+#SendCANFrameToSerial = frame44_ns.class_("SendCANFrameToSerial", cg.Component)
 CONF_CANID = 'canid'
 
 
 CONFIG_SCHEMA = cv.Schema(
     {
-        cv.GenerateID(): cv.declare_id(SendCANFrameToSerial),
+        cv.GenerateID(): cv.declare_id(RealdashFrame44),
+        cv.Schema({cv.GenerateID(): cv.declare_id(SendCANFrameToSerial)}),
         cv.Required(CONF_CANID): cv.int_,
                 
     }
