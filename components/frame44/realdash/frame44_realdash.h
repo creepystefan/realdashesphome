@@ -51,19 +51,19 @@ void update() override
 //class RealdashFrame44 : public PollingComponent {
 // public:
 //  RealdashFrame44() : PollingComponent(10) {}
-void SendCANFramesToSerial()
+void RealdashFrame44::SendCANFramesToSerial()
 {
   byte buf[8];
   memcpy(buf, &data0, 2);
   memcpy(buf + 2, &data1, 2);
   memcpy(buf + 4, &data2, 2);
   memcpy(buf + 6, &data3, 2);
-  SendCANFrameToSerial(canid, buf);
+  RealdashFrame44::SendCANFrameToSerial(canid, buf);
   //RealdashFrame44(canid, buf);
 }
-//};
-//void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
-void RealdashFrame44(unsigned long canFrameId, const byte* frameData)
+
+void RealdashFrame44::SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
+//void RealdashFrame44(unsigned long canFrameId, const byte* frameData)
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
   Serial.write(serialBlockTag, 4);
