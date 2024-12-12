@@ -12,13 +12,13 @@ BLESerial<> SerialBLE;
 class BLESERIAL : public Component {
  public:
 
-void setup() {
+void setup() override {
     Serial.begin(115200);
     SerialBLE.begin("Realdash");
     
 }
 
-void loop() {
+void loop() override {
     if (Serial.available()) {
         SerialBLE.write(Serial.read());
         SerialBLE.flush();
