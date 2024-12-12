@@ -8,6 +8,11 @@ RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
 #SendCANFrameToSerial = frame44_ns.class_("SendCANFrameToSerial", cg.Component)
 CONF_CANID = 'canid'
 
+xy6020_ns = cg.esphome_ns.namespace("xy6020")
+XY6020 = xy6020_ns.class_(
+    "XY6020", cg.PollingComponent, modbus.ModbusDevice
+
+
 
 CONFIG_SCHEMA = cv.Schema(
     {
