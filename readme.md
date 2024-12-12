@@ -13,7 +13,9 @@ https://github.com/paleppp/2SerialToRealdashCAN/tree/main/src
 
 * realdash:
 *   - platform: frame44
-*     canid: 1
+*     canid: 0x1           = then in realdash Monitor 00 00 00 01
+*   - platform: frame44
+*     canid: 0x1fffffff           = then in realdash Monitor 1f ff ff ff
 
-* canid: (Required) 1  - ffffffff
-*         if 1 then in realdash Monitor 00 00 00 01
+* canid: (Required) 1  - 1fffffff
+
