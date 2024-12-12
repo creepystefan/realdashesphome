@@ -12,8 +12,8 @@ CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(RealdashFrame44),
         #cv.GenerateID(): cv.declare_id(SendCANFrameToSerial),
-        cv.Required(CONF_CANID): cv.int_,
-                
+        #cv.Required(CONF_CANID): cv.int_,
+        cv.Required(CONF_CANID): cv.int_range(min=0, max=0x1FFFFFFF),     
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
