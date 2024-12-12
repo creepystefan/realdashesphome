@@ -17,9 +17,9 @@ uint16_t data0 = 2815;
 uint8_t data1 = 10; 
 int data2 = 11; 
 unsigned int data3 = 10;  
-#int canid;
 
-#void set_canid(int canid) { canid = canid; }
+//int canid;
+//void set_canid(int canid) { canid = canid; }
 
 void setup() override
 {
@@ -58,7 +58,7 @@ void SendCANFramesToSerial()
   memcpy(buf + 2, &data1, 2);
   memcpy(buf + 4, &data2, 2);
   memcpy(buf + 6, &data3, 2);
-  RealdashFrame44::SendCANFrameToSerial(RealdashFrame44::canid, buf);
+  RealdashFrame44::SendCANFrameToSerial(canid, buf);
 }
 
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
