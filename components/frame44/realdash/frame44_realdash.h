@@ -20,6 +20,7 @@ unsigned int data3 = 10;
 
 //int canid;
 //void set_canid(int canid) { canid = canid; }
+void set_canid(uint32_t canid) { this->canid_ = canid; }
 
 void setup() override
 {
