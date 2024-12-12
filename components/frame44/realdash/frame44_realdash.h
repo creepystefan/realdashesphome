@@ -7,8 +7,6 @@
 namespace esphome {
 namespace frame44_ { 
 
-
-//class RealdashFrame44 : public realdash::Realdash, public PollingComponent  {
 class RealdashFrame44 : public PollingComponent {
  public:
   RealdashFrame44() : PollingComponent(10) {}
@@ -20,15 +18,11 @@ unsigned int data3 = 10;
 
  
 uint32_t canid_;
-
-//int canid;
-//void set_canid(int canid) { canid = canid; }
 void set_canid(uint32_t canid) { this->canid_ = canid; }
 
 void setup() override
 {
   Serial.begin(115200);
-  
 }
 
 void update() override
