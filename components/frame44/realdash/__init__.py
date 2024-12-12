@@ -4,15 +4,9 @@ from esphome.components import realdash
 from esphome.const import (CONF_ID)
 
 frame44_ns = cg.esphome_ns.namespace("frame44_")
-RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.Component)
-#SendCANFrameToSerial = frame44_ns.class_("SendCANFrameToSerial", cg.Component)
+RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.PollingComponent)
+
 CONF_CANID = 'canid'
-
-xy6020_ns = cg.esphome_ns.namespace("xy6020")
-XY6020 = xy6020_ns.class_(
-    "XY6020", cg.PollingComponent, modbus.ModbusDevice
-
-
 
 CONFIG_SCHEMA = cv.Schema(
     {
