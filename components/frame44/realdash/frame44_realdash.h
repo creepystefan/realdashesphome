@@ -17,9 +17,9 @@ uint16_t data0 = 2815;
 uint8_t data1 = 10; 
 int data2 = 11; 
 unsigned int data3 = 10;  
-int canid;
+#int canid;
 
-void set_canid(int canid) { canid = canid; }
+#void set_canid(int canid) { canid = canid; }
 
 void setup() override
 {
