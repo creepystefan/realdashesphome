@@ -62,7 +62,7 @@ void RealdashFrame44::SendCANFramesToSerial()
   //RealdashFrame44(canid, buf);
 }
 
-void RealdashFrame44::SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
+void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 //void RealdashFrame44(unsigned long canFrameId, const byte* frameData)
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
