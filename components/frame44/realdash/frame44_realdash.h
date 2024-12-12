@@ -51,7 +51,7 @@ void update() override
 //class RealdashFrame44 : public PollingComponent {
 // public:
 //  RealdashFrame44() : PollingComponent(10) {}
-void RealdashFrame44::SendCANFramesToSerial()
+void SendCANFramesToSerial()
 {
   byte buf[8];
   memcpy(buf, &data0, 2);
