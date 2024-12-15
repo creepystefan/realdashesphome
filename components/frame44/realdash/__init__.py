@@ -16,7 +16,7 @@ CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(RealdashFrame44),
         cv.Required(CONF_CANID): cv.int_range(min=0, max=0x1FFFFFFF),
-        cv.Optional(CONF_DATA1): cv.boolean,
+        cv.Optional(CONF_DATA1): cv.int_range(min=0, max=0x1FFF),
         #cv.Optional(CONF_DATA2): cv.boolean,
         #cv.Optional(CONF_DATA3): cv.boolean,
         #cv.Optional(CONF_DATA4): cv.boolean,
