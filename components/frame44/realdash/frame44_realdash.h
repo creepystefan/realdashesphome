@@ -11,14 +11,16 @@ class RealdashFrame44 : public PollingComponent {
  public:
   RealdashFrame44() : PollingComponent(10) {}
 
-uint16_t data0 = 2815;
-uint8_t data1 = 10; 
-int data2 = 11; 
-unsigned int data3 = 10;  
+#uint16_t data0 = 2815;
+#uint8_t data1 = 10; 
+#int data2 = 11; 
+#unsigned int data3 = 10;  
 
  
 uint32_t canid_;
 void set_canid(uint32_t canid) { this->canid_ = canid; }
+uint16_t data1_;
+void set_data1(uint16_t data1) { this->data1_ = data1; }
 
 void setup() override
 {
@@ -32,10 +34,7 @@ void update() override
   {
     data0 = 500;
   }
-  if (data1++ > 10000)
-  {
-    data1 = 10;
-  }
+  
   if (data2++ > 10000)
   {
     data2 = 0;
