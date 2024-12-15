@@ -7,7 +7,7 @@ frame44_ns = cg.esphome_ns.namespace("frame44_")
 RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.PollingComponent)
 
 CONF_CANID = 'canid'
-#CONF_CANID = 'data1'
+CONF_CANID = 'data1'
 #CONF_CANID = 'data2'
 #CONF_CANID = 'data3'
 #CONF_CANID = 'data4'
@@ -16,7 +16,7 @@ CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(RealdashFrame44),
         cv.Required(CONF_CANID): cv.int_range(min=0, max=0x1FFFFFFF),
-        #cv.Optional(CONF_DATA1): cv.boolean,
+        cv.Optional(CONF_DATA1): cv.boolean,
         #cv.Optional(CONF_DATA2): cv.boolean,
         #cv.Optional(CONF_DATA3): cv.boolean,
         #cv.Optional(CONF_DATA4): cv.boolean,
@@ -28,7 +28,7 @@ async def to_code(config):
    await cg.register_component(var, config)
     
    cg.add(var.set_canid(config[CONF_CANID]))
-   #cg.add(var.set_canid(config[CONF_DATA1]))
+   cg.add(var.set_canid(config[CONF_DATA1]))
    #cg.add(var.set_canid(config[CONF_DATA2]))
    #cg.add(var.set_canid(config[CONF_DATA3]))
    #cg.add(var.set_canid(config[CONF_DATA4]))
