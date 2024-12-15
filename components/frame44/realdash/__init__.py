@@ -7,6 +7,10 @@ frame44_ns = cg.esphome_ns.namespace("frame44_")
 RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.PollingComponent)
 
 CONF_CANID = 'canid'
+#CONF_CANID = 'data1'
+#CONF_CANID = 'data2'
+#CONF_CANID = 'data3'
+#CONF_CANID = 'data4'
 
 CONFIG_SCHEMA = cv.Schema(
     {
