@@ -16,10 +16,11 @@ CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(RealdashFrame44),
         cv.Required(CONF_CANID): cv.int_range(min=0, max=0x1FFFFFFF),
-        cv.Optional(CONF_DATA1): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA2): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA3): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA4): cv.int_range(min=0, max=65535),
+        cv.Optional(CONF_DATA1, default=0): cv.int_range(min=0, max=65535),
+        cv.Optional(CONF_DATA2, default=0): cv.int_range(min=0, max=65535),
+        cv.Optional(CONF_DATA3, default=0): cv.int_range(min=0, max=65535),
+        cv.Optional(CONF_DATA4, default=0): cv.int_range(min=0, max=65535),
+        
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
