@@ -30,24 +30,9 @@ void setup() override
 void update() override
 {
   SendCANFramesToSerial();
- if (data0++ > 0)
-  {
-    data0 = 0;
-  }
-  
-  if (data2++ > 0)
-  {
-    data2 = 0;
-  }
-  if (data3++ > 0)
-  {
-    data3 = 0;
-  }
- delay(5);
+  delay(5);
 }
-//class RealdashFrame44 : public PollingComponent {
-// public:
-//  RealdashFrame44() : PollingComponent(10) {}
+
 void SendCANFramesToSerial()
 {
   byte buf[8];
