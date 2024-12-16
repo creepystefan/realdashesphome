@@ -52,7 +52,7 @@ void SendCANFramesToSerial()
 {
   byte buf[8];
   memcpy(buf, &data0, 2);
-  memcpy(buf + 2, &data1, 2);
+  memcpy(buf + 2, &data1_, 2);
   memcpy(buf + 4, &data2, 2);
   memcpy(buf + 6, &data3, 2);
   RealdashFrame44::SendCANFrameToSerial(canid_, buf);
