@@ -11,12 +11,6 @@ class RealdashFrame44 : public PollingComponent {
  public:
   RealdashFrame44() : PollingComponent(10) {}
 
-//uint16_t data0 = 0;
-//uint16_t data1 = 0; 
-//uint16_t data2 = 0; 
-//uint16_t data3 = 0;  
-
- 
 uint32_t canid_;
 void set_canid(uint32_t canid) { this->canid_ = canid; }
 uint16_t data1_;
