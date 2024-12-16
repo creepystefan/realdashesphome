@@ -11,10 +11,10 @@ class RealdashFrame44 : public PollingComponent {
  public:
   RealdashFrame44() : PollingComponent(10) {}
 
-#uint16_t data0 = 2815;
-#uint8_t data1 = 10; 
-#int data2 = 11; 
-#unsigned int data3 = 10;  
+uint16_t data0 = 0;
+//uint8_t data1 = 0; 
+int data2 = 0; 
+unsigned int data3 = 0;  
 
  
 uint32_t canid_;
@@ -30,16 +30,16 @@ void setup() override
 void update() override
 {
   SendCANFramesToSerial();
- if (data0++ > 10000)
+ if (data0++ > 0)
   {
-    data0 = 500;
+    data0 = 0;
   }
   
-  if (data2++ > 10000)
+  if (data2++ > 0)
   {
     data2 = 0;
   }
-  if (data3++ > 10000)
+  if (data3++ > 0)
   {
     data3 = 0;
   }
@@ -53,8 +53,8 @@ void SendCANFramesToSerial()
   byte buf[8];
   memcpy(buf, &data0, 2);
   memcpy(buf + 2, &data1, 2);
-  //memcpy(buf + 4, &data2, 2);
-  //memcpy(buf + 6, &data3, 2);
+  memcpy(buf + 4, &data2, 2);
+  memcpy(buf + 6, &data3, 2);
   RealdashFrame44::SendCANFrameToSerial(canid_, buf);
 }
 
