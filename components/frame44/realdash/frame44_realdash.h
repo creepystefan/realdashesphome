@@ -13,8 +13,8 @@ class RealdashFrame44 : public PollingComponent {
 
 uint16_t data0 = 0;
 //uint8_t data1 = 0; 
-int data2 = 0; 
-unsigned int data3 = 0;  
+uint16_t data2 = 0; 
+uint16_t data3 = 0;  
 
  
 uint32_t canid_;
