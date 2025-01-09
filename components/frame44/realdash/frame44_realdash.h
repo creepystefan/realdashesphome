@@ -24,7 +24,7 @@ void set_data4(uint16_t data4) { this->data4_ = data4; }
 
 void setup() override
 {
-  Serial.begin(115200);
+  Serial1.begin(115200, 17, 18);
 }
 
 void update() override
@@ -46,9 +46,9 @@ void SendCANFramesToSerial()
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
-  Serial.write(serialBlockTag, 4);
-  Serial.write((const byte*)&canFrameId, 4);
-  Serial.write(frameData, 8);
+  Serial1.write(serialBlockTag, 4);
+  Serial1.write((const byte*)&canFrameId, 4);
+  Serial1.write(frameData, 8);
 }
 };
 
