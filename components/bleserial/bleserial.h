@@ -13,8 +13,8 @@ class BLESERIAL : public Component {
  public:
 
 void setup() override {
-    Serial.begin(115200);
-    SerialBLE.begin("Realdash");
+    //Serial.begin(115200);
+    SerialBLE.begin("Realdash-BT");
     
 }
 
