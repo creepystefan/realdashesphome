@@ -19,13 +19,13 @@ void setup() override {
 }
 
 void loop() override {
-    if (Serial.available()) {
+ //   if (Serial.available()) {
         SerialBLE.write(Serial1.read());
         SerialBLE.flush();
-    }
-    if (SerialBLE.available()) {
-        Serial.write(SerialBLE.read());
-    }
+ //   }
+  //  if (SerialBLE.available()) {
+ //       Serial.write(SerialBLE.read());
+ //   }
   
 }
 
