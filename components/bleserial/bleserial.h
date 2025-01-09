@@ -13,7 +13,7 @@ class BLESERIAL : public Component {
  public:
 
 void setup() override {
-    Serial2.begin(115200);
+    Serial.begin(115200);
     SerialBLE.begin("Realdash");
     
 }
@@ -24,7 +24,7 @@ void loop() override {
         SerialBLE.flush();
     }
     if (SerialBLE.available()) {
-        Serial2.write(SerialBLE.read());
+        Serial.write(SerialBLE.read());
     }
   
 }
