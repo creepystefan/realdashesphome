@@ -24,7 +24,7 @@ void set_data4(uint16_t data4) { this->data4_ = data4; }
 
 void setup() override
 {
-  Serial1.begin(115200, 1, 3);
+  Serial1.begin(115200,2,3);
 }
 
 void update() override
