@@ -26,7 +26,7 @@ captive_portal:
 
 realdash:
   - platform: frame44
-    can_id: 1           
+    canid: 1           
     data1:              
     data2:
     data3:
