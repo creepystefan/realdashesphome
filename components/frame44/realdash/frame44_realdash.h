@@ -49,6 +49,7 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
   Serial1.write(serialBlockTag, 4);
   Serial1.write((const byte*)&canFrameId, 4);
   Serial1.write(frameData, 8);
+//write_array
 }
 };
 
