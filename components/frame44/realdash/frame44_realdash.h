@@ -7,7 +7,7 @@
 namespace esphome {
 namespace frame44_ { 
 
-class RealdashFrame44 : public PollingComponent {
+class RealdashFrame44 : public PollingComponent UARTDevice {
  public:
   RealdashFrame44() : PollingComponent(10) {}
 
