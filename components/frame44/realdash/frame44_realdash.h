@@ -2,8 +2,6 @@
 
 #include "esphome/core/component.h"
 #include "esphome.h"
-#include "uart.h"
-
 
 namespace esphome {
 namespace frame44_ { 
