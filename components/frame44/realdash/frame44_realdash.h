@@ -10,7 +10,8 @@ namespace frame44_ {
 
 class RealdashFrame44 : public PollingComponent, public UARTDevice {
  public:
-  RealdashFrame44() : PollingComponent(10) {}
+ # RealdashFrame44() : PollingComponent(10) {}
+  RealdashFrame44(UARTComponent *parent) : UARTDevice(parent) {}
 
 uint32_t canid_;
 void set_canid(uint32_t canid) { this->canid_ = canid; }
