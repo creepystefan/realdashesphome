@@ -2,18 +2,13 @@
 
 #include "esphome/core/component.h"
 #include "esphome.h"
+#include "esphome/components/uart/uart.h"
 
 namespace esphome {
 namespace frame44_ { 
-
-class RealdashFrame44 : public Component, public UARTDevice {
+class RealdashFrame44 : public uart::UARTDevice, public PollingComponent {
  public:
- # RealdashFrame44() : PollingComponent(10) {}
-  RealdashFrame44(UARTComponent *parent) : UARTDevice(parent) {}
-
-#class MyCustomComponent : public Component, public UARTDevice {
-# public:
-#  MyCustomComponent(UARTComponent *parent) : UARTDevice(parent) {}
+  RealdashFrame44() : PollingComponent(10) {}
 
 uint32_t canid_;
 void set_canid(uint32_t canid) { this->canid_ = canid; }
@@ -50,16 +45,17 @@ void SendCANFramesToSerial()
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
   const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
-  Serial.write(serialBlockTag, 4);
-  Serial.write((const byte*)&canFrameId, 4);
-  Serial.write(frameData, 8);
-  //write_array(serialBlockTag, 4);
-  //write_array((const byte*)&canFrameId, 4);
-  //write_array(frameData, 8);
-  //write(serialBlockTag, 4);
-  //write((const byte*)&canFrameId, 4);
-  //write(frameData, 8);
-
+ 
+  // original arduino
+  //Serial.write(serialBlockTag, 4);
+  //Serial.write((const byte*)&canFrameId, 4);
+  //Serial.write(frameData, 8);
+  //
+  
+  write_array(serialBlockTag, 4);
+  write_array((const byte*)&canFrameId, 4);
+  write_array(frameData, 8);
+  
 }
 };
 
