@@ -27,7 +27,7 @@ CONFIG_SCHEMA = cv.Schema(
 async def to_code(config):
    var = cg.new_Pvariable(config[CONF_ID])
    await cg.register_component(var, config)
-   await uart.register_realdashtest(var, config)
+   await cg.register_realdashtest(var, config)
 
    cg.add(var.set_canid(config[CONF_CANID]))
    cg.add(var.set_data1(config[CONF_DATA1]))
