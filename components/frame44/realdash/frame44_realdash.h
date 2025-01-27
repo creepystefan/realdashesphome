@@ -2,11 +2,12 @@
 
 #include "esphome/core/component.h"
 #include "esphome.h"
-#include "esphome/components/uart/uart.h"
+//#include "esphome/components/uart/uart.h"
 
 namespace esphome {
 namespace frame44_ { 
-class RealdashFrame44 : public uart::UARTDevice, public PollingComponent {
+//class RealdashFrame44 : public uart::UARTDevice, public PollingComponent {
+class RealdashFrame44 :  public PollingComponent {
  public:
   RealdashFrame44() : PollingComponent(10) {}
 
@@ -42,9 +43,9 @@ void SendCANFramesToSerial()
   RealdashFrame44::SendCANFrameToSerial(canid_, buf);
 }
 
-void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
-{
-  const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
+//void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
+//{
+//  const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
  
   // original arduino
   //Serial.write(serialBlockTag, 4);
@@ -52,11 +53,11 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
   //Serial.write(frameData, 8);
   //
   
-  write_array(serialBlockTag, 4);
-  write_array((const byte*)&canFrameId, 4);
-  write_array(frameData, 8);
+  //write_array(serialBlockTag, 4);
+  //write_array((const byte*)&canFrameId, 4);
+  //write_array(frameData, 8);
   
-}
+//}
 };
 
 }  // namespace frame44_
