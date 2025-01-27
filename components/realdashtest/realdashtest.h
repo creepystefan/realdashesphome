@@ -6,22 +6,19 @@
 namespace esphome {
 namespace realdashtest { 
 
-class BTSERIAL : public Component {
+class RealdashFrame44 : public uart::UARTDevice, public PollingComponent {
  public:
+  RealdashFrame44() : PollingComponent(10) {}
 
+void setup() override{}
 
-void setup() {}
-
-void loop() {
-  if (Serial.available()) {
-    SerialBT.write(Serial.read());
-  }
-  if (SerialBT.available()) {
-    Serial.write(SerialBT.read());
-  }
-  delay(25);
+void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
+{
+  const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
+  write_array(serialBlockTag, 4);
+  write_array((const byte*)&canFrameId, 4);
+  write_array(frameData, 8);
 }
-
 };
 
 }  // namespace realdashtest
