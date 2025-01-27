@@ -2,6 +2,8 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.const import CONF_ID
 
+DEPENDENCIES = ['uart']
+
 realdashtest_ns = cg.esphome_ns.namespace("realdashtest")
 REALDASH_TEST = realdashtest_ns.class_("REALDASH_TEST", cg.Component)
 
