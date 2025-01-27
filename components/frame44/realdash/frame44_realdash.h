@@ -40,8 +40,9 @@ void SendCANFramesToSerial()
   memcpy(buf + 2, &data2_, 2);
   memcpy(buf + 4, &data3_, 2);
   memcpy(buf + 6, &data4_, 2);
-  #RealdashFrame44::SendCANFrameToSerial(canid_, buf);
- REALDASH_TEST::SendCANFrameToSerial(canid_, buf);
+  //RealdashFrame44::SendCANFrameToSerial(canid_, buf);
+  REALDASH_TEST::SendCANFrameToSerial(canid_, buf);
+  SendCANFrameToSerial(canid_, buf);
 }
 
 //void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
