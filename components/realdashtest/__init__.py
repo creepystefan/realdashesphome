@@ -6,7 +6,7 @@ from esphome.const import CONF_ID
 DEPENDENCIES = ['uart']
 
 realdashtest_ns = cg.esphome_ns.namespace("realdashtest")
-REALDASH_TEST = realdashtest_ns.class_("REALDASH_TEST", cg.Component)
+REALDASH_TEST = realdashtest_ns.class_("REALDASH_TEST", cg.Component, uart.UARTDevice)
 
 CONF_BTNAME = 'realdashtest'
 
@@ -14,8 +14,7 @@ CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(REALDASH_TEST),
     }
-).extend(cv.COMPONENT_SCHEMA)
-
+).extend(cv.COMPONENT_SCHEMA).extend(uart.UART_DEVICE_SCHEMA)
 
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
