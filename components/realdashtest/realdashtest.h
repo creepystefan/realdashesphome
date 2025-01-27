@@ -12,6 +12,11 @@ class REALDASH_TEST : public uart::UARTDevice, public PollingComponent {
   REALDASH_TEST() : PollingComponent(10) {}
 
 void setup() override{}
+void update() override
+{
+  SendCANFramesToSerial();
+  delay(5);
+}
 
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 {
