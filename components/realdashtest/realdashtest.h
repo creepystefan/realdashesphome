@@ -7,9 +7,9 @@
 namespace esphome {
 namespace realdashtest { 
 
-class RealdashFrame44 : public uart::UARTDevice, public PollingComponent {
+class RealDash_TEST : public uart::UARTDevice, public PollingComponent {
  public:
-  RealdashFrame44() : PollingComponent(10) {}
+  RealDash_TEST() : PollingComponent(10) {}
 
 void setup() override{}
 
