@@ -8,7 +8,7 @@ DEPENDENCIES = ['uart']
 realdashtest_ns = cg.esphome_ns.namespace("realdashtest")
 REALDASH_TEST = realdashtest_ns.class_("REALDASH_TEST", cg.Component, uart.UARTDevice)
 
-CONF_BTNAME = 'realdashtest'
+CONF_REALDASH_TEST = 'realdashtest'
 
 CONFIG_SCHEMA = cv.Schema(
     {
