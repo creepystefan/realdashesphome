@@ -1,6 +1,6 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.components import realdashtest, uart
+from esphome.components import arealdashtest, uart
 from esphome.const import CONF_ID
 
 DEPENDENCIES = ['uart']
