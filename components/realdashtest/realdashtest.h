@@ -5,11 +5,11 @@
 #include "esphome/components/uart/uart.h"
 
 namespace esphome {
-namespace realdashtest { 
+namespace arealdashtest { 
 
-class REALDASH_TEST : public uart::UARTDevice, public PollingComponent {
+class AREALDASH_TEST : public uart::UARTDevice, public PollingComponent {
  public:
-  REALDASH_TEST() : PollingComponent(10) {}
+  AREALDASH_TEST() : PollingComponent(10) {}
 
 void setup() override{}
 void update() override{}
@@ -23,5 +23,5 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
 }
 };
 
-}  // namespace realdashtest
+}  // namespace arealdashtest
 }  // namespace esphome
