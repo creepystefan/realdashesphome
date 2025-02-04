@@ -5,14 +5,14 @@ from esphome.const import CONF_ID
 
 DEPENDENCIES = ['uart']
 
-realdashtest_ns = cg.esphome_ns.namespace("realdashtest")
-REALDASH_TEST = realdashtest_ns.class_("REALDASH_TEST", cg.Component, uart.UARTDevice)
+arealdashtest_ns = cg.esphome_ns.namespace("arealdashtest")
+AREALDASH_TEST = arealdashtest_ns.class_("AREALDASH_TEST", cg.Component, uart.UARTDevice)
 
-CONF_REALDASH_TEST = 'realdashtest'
+CONF_AREALDASH_TEST = 'arealdashtest'
 
 CONFIG_SCHEMA = cv.Schema(
     {
-        cv.GenerateID(): cv.declare_id(REALDASH_TEST),
+        cv.GenerateID(): cv.declare_id(AREALDASH_TEST),
     }
 ).extend(cv.COMPONENT_SCHEMA).extend(uart.UART_DEVICE_SCHEMA)
 
