@@ -1,6 +1,6 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.components import realdashtest
+from esphome.components import arealdashtest
 from esphome.const import (CONF_ID)
 
 AUTO_LOAD = ["realdashtest"]
