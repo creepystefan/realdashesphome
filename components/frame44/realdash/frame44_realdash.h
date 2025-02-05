@@ -41,25 +41,15 @@ void SendCANFramesToSerial()
   memcpy(buf + 4, &data3_, 2);
   memcpy(buf + 6, &data4_, 2);
   RealdashFrame44::SendCANFrameToSerial(canid_, buf);
-  //REALDASH_TEST::SendCANFrameToSerial(canid_, buf);
-  //SendCANFrameToSerial(canid_, buf);
 }
 
-//void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
-//{
-//  const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
- 
-  // original arduino
-  //Serial.write(serialBlockTag, 4);
-  //Serial.write((const byte*)&canFrameId, 4);
-  //Serial.write(frameData, 8);
-  //
-  
-  //write_array(serialBlockTag, 4);
-  //write_array((const byte*)&canFrameId, 4);
-  //write_array(frameData, 8);
-  
-//}
+void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
+{
+  const byte serialBlockTag[4] = { 0x44, 0x33, 0x22, 0x11 };
+  write_array(serialBlockTag, 4);
+  write_array((const byte*)&canFrameId, 4);
+  write_array(frameData, 8);
+}
 };
 
 }  // namespace frame44_
