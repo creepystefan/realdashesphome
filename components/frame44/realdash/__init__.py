@@ -1,9 +1,9 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.components import arealdashtest, uart
+from esphome.components import uart
 from esphome.const import (CONF_ID)
 
-AUTO_LOAD = ["arealdashtest"]
+#AUTO_LOAD = ["arealdashtest"]
 
 frame44_ns = cg.esphome_ns.namespace("frame44_")
 RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.PollingComponent)
@@ -30,8 +30,6 @@ CONFIG_SCHEMA = cv.Schema(
 async def to_code(config):
    var = cg.new_Pvariable(config[CONF_ID])
    await cg.register_component(var, config)
-   #await cg.register_realdashtest(var, config)
-   #await realdashtest.register_realdashtest(var, config)
    await uart.register_uart_device(var, config)
 
    cg.add(var.set_canid(config[CONF_CANID]))
