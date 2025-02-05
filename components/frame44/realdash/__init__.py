@@ -6,7 +6,7 @@ from esphome.const import (CONF_ID)
 #AUTO_LOAD = ["arealdashtest"]
 
 frame44_ns = cg.esphome_ns.namespace("frame44_")
-RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.PollingComponent)
+RealdashFrame44 = frame44_ns.class_("RealdashFrame44", cg.PollingComponent, uart.UARTDevice)
 
 CONF_CANID = 'canid'
 CONF_DATA1 = 'data1'
