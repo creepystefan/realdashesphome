@@ -31,6 +31,7 @@ async def to_code(config):
    await cg.register_component(var, config)
    #await cg.register_realdashtest(var, config)
    #await realdashtest.register_realdashtest(var, config)
+   await uart.register_uart_device(var, config)
 
    cg.add(var.set_canid(config[CONF_CANID]))
    cg.add(var.set_data1(config[CONF_DATA1]))
