@@ -1,3 +1,8 @@
+void loop()
+{
+  ReadIncomingSerialData();
+}
+
 void ReadIncomingSerialData()
 {
   while (Serial.available() > 0)
