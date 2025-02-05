@@ -24,7 +24,8 @@ CONFIG_SCHEMA = cv.Schema(
         cv.Optional(CONF_DATA4, default=0): cv.int_range(min=0, max=65535),
         
     }
-).extend(cv.COMPONENT_SCHEMA)
+#).extend(cv.COMPONENT_SCHEMA)
+).extend(cv.COMPONENT_SCHEMA).extend(uart.UART_DEVICE_SCHEMA)
 
 async def to_code(config):
    var = cg.new_Pvariable(config[CONF_ID])
