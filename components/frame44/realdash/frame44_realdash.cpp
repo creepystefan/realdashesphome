@@ -4,7 +4,7 @@
 namespace esphome {
 namespace frame44_ {
 
-static const char *TAG = "empty_uart_component.component";
+static const char *TAG = "Frame44_Realdash";
 
 void EmptyUARTComponent::setup() {
 
@@ -18,5 +18,5 @@ void EmptyUARTComponent::dump_config(){
     ESP_LOGCONFIG(TAG, "Empty UART component");
 }
 
-}  // namespace empty_uart_component
+}  // namespace frame44_
 }  // namespace esphome
