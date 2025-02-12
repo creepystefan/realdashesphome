@@ -16,7 +16,7 @@ static const char *TAG = "Realdash";
 
 void RealdashFrame44::dump_config(){
 //    ESP_LOGCONFIG(TAG, "Frame44");
-    ESP_LOGCONFIG(TAG, "Frame44", this->canid_);
+    ESP_LOGCONFIG(TAG, "Frame44 0x%04X", this->canid_);
 }
 
 // this->canid_
