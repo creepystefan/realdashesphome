@@ -50,6 +50,7 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
   write_array((const byte*)&canFrameId, 4);
   write_array(frameData, 8);
 }
+void dump_config() override;
 };
 
 }  // namespace frame44_
