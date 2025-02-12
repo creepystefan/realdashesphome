@@ -4,7 +4,7 @@
 namespace esphome {
 namespace frame44_ {
 
-static const char *TAG = "Frame44_Realdash";
+static const char *TAG = "Realdash";
 
 //void RealdashFrame44::setup() {
 
