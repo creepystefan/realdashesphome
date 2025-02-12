@@ -6,16 +6,16 @@ namespace frame44_ {
 
 static const char *TAG = "Frame44_Realdash";
 
-void EmptyUARTComponent::setup() {
+void RealdashFrame44::setup() {
 
 }
 
-void EmptyUARTComponent::loop() {
+void RealdashFrame44::loop() {
 
 }
 
-void EmptyUARTComponent::dump_config(){
-    ESP_LOGCONFIG(TAG, "Empty UART component");
+void RealdashFrame44::dump_config(){
+    ESP_LOGCONFIG(TAG, "Frame44");
 }
 
 }  // namespace frame44_
