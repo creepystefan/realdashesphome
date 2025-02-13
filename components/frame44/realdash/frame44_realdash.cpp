@@ -15,12 +15,9 @@ static const char *TAG = "Realdash";
 //}
 
 void RealdashFrame44::dump_config(){
-//    ESP_LOGCONFIG(TAG, "Frame44");
     ESP_LOGCONFIG(TAG, "Frame44-ID: 0x%08X", this->canid_);
 //    ESP_LOGD("custom", "Starting washer cycle!", this->data1_);
 }
-
-// this->canid_
 
 }  // namespace frame44_
 }  // namespace esphome
