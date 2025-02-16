@@ -1,0 +1,32 @@
+interval:
+  - interval: 1sec
+    then:
+       - uart.write: !lambda
+           return {
+              0x44, 0x33, 0x22, 0x11,
+              0x01, 0x01, 0x01, 0x01,
+              0x01,
+              0x02,
+              0x03,
+              0x04,
+              id(eingabe).state,
+              0x06,
+              0x07, 
+              id(testswitch).state
+             };
+
+
+switch:
+  - platform: template
+    name: test
+    id: testswitch
+    optimistic: true
+
+number:
+  - platform: template
+    name: eingabe
+    id: eingabe
+    step: 1
+    min_value: 0
+    max_value: 255
+    optimistic: true
