@@ -1,3 +1,17 @@
+logger:
+  baud_rate: 115200
+  level: DEBUG
+    
+
+uart:
+  tx_pin: GPIO20
+  rx_pin: GPIO21
+  baud_rate: 115200
+  debug:
+    direction: BOTH
+    dummy_receiver: true
+
+
 interval:
   - interval: 1sec
     then:
