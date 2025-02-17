@@ -7,31 +7,33 @@
 namespace esphome {
 namespace frame44_ { 
 class RealdashFrame44 : public uart::UARTDevice, public PollingComponent {
-//class RealdashFrame44 :  public PollingComponent {
  public:
-  RealdashFrame44() : PollingComponent(10) {}
+  RealdashFrame44() : PollingComponent(5000) {}
 
 uint32_t canid_;
-void set_canid(uint32_t canid) { this->canid_ = canid; }
 uint16_t data1_;
-void set_data1(uint16_t data1) { this->data1_ = data1; }
 uint16_t data2_;
-void set_data2(uint16_t data2) { this->data2_ = data2; }
 uint16_t data3_;
-void set_data3(uint16_t data3) { this->data3_ = data3; }
 uint16_t data4_;
+
+void set_canid(uint32_t canid) { this->canid_ = canid; }
+void set_data1(uint16_t data1) { this->data1_ = data1; }
+void set_data2(uint16_t data2) { this->data2_ = data2; }
+void set_data3(uint16_t data3) { this->data3_ = data3; }
 void set_data4(uint16_t data4) { this->data4_ = data4; }
+
 
 void setup() override
 {
-//  Serial1.begin(115200,20,21);
 }
+
 
 void update() override
 {
   SendCANFramesToSerial();
   delay(5);
 }
+
 
 void SendCANFramesToSerial()
 {
@@ -41,6 +43,13 @@ void SendCANFramesToSerial()
   memcpy(buf + 4, &data3_, 2);
   memcpy(buf + 6, &data4_, 2);
   RealdashFrame44::SendCANFrameToSerial(canid_, buf);
+ 
+  ESP_LOGI("custom", "Frame44-ID: 0x%08X", this->canid_);
+  ESP_LOGI("custom", "DATA1:      0x%02X", this->data1_);
+  ESP_LOGI("custom", "DATA2:      0x%02X", this->data2_);
+  ESP_LOGI("custom", "DATA3:      0x%02X", this->data3_);
+  ESP_LOGI("custom", "DATA4:      0x%02X", this->data4_);
+
 }
 
 void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
@@ -50,8 +59,12 @@ void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
   write_array((const byte*)&canFrameId, 4);
   write_array(frameData, 8);
 }
+
 void dump_config() override;
 };
 
 }  // namespace frame44_
 }  // namespace esphome
+
+
+
