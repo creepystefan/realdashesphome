@@ -25,7 +25,7 @@ void update() override
 
 void SendCANFramesToSerial()
 {
-  SendTextExtensionFrameToSerial(3203, "Das ist nur ein Test");
+  SendTextExtensionFrameToSerial(canid_, "Das ist nur ein Test");
 }
 
 void SendTextExtensionFrameToSerial(unsigned long canFrameId, const char* text)
