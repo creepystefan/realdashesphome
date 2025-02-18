@@ -9,20 +9,13 @@ frame55_ns = cg.esphome_ns.namespace("frame55_")
 RealdashFrame55 = frame55_ns.class_("RealdashFrame55", cg.PollingComponent, uart.UARTDevice)
 
 CONF_CANID = 'canid'
-CONF_DATA1 = 'data1'
-CONF_DATA2 = 'data2'
-CONF_DATA3 = 'data3'
-CONF_DATA4 = 'data4'
+#CONF_TEXT = 'text'
 
 CONFIG_SCHEMA = cv.Schema(
     {
         cv.GenerateID(): cv.declare_id(RealdashFrame55),
         cv.Required(CONF_CANID): cv.int_range(min=0, max=0x1FFFFFFF),
-        cv.Optional(CONF_DATA1, default=0): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA2, default=0): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA3, default=0): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA4, default=0): cv.int_range(min=0, max=65535),
-        
+        #cv.Optional(CONF_TEXT, default=0): cv.int_range(min=0, max=65535),
     }
 #).extend(cv.COMPONENT_SCHEMA)
 ).extend(cv.COMPONENT_SCHEMA).extend(uart.UART_DEVICE_SCHEMA)
@@ -33,7 +26,5 @@ async def to_code(config):
    await uart.register_uart_device(var, config)
 
    cg.add(var.set_canid(config[CONF_CANID]))
-   cg.add(var.set_data1(config[CONF_DATA1]))
-   cg.add(var.set_data2(config[CONF_DATA2]))
-   cg.add(var.set_data3(config[CONF_DATA3]))
-   cg.add(var.set_data4(config[CONF_DATA4]))
+   #cg.add(var.set_data1(config[CONF_TEXT]))
+   
