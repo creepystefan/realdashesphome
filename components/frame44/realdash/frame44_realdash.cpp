@@ -1,5 +1,5 @@
 #include "esphome/core/log.h"
-#include "frame55_realdash.h"
+#include "frame44_realdash.h"
 
 namespace esphome {
 namespace frame44_ {
