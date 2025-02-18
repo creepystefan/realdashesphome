@@ -1,40 +1,67 @@
-import esphome.codegen as cg
-import esphome.config_validation as cv
-from esphome.components import uart
-from esphome.const import (CONF_ID)
+#pragma once
 
-#AUTO_LOAD = ["arealdashtest"]
-DEPENDENCIES = ['uart']
+#include "esphome/core/component.h"
+#include "esphome.h"
+#include "esphome/components/uart/uart.h"
 
-frame55_ns = cg.esphome_ns.namespace("frame55_")
-RealdashFrame55 = frame55_ns.class_("RealdashFrame55", cg.PollingComponent, uart.UARTDevice)
+namespace esphome {
+namespace frame55_ { 
+class RealdashFrame55 : public uart::UARTDevice, public PollingComponent {
+ public:
+  RealdashFrame55() : PollingComponent(5000) {}
 
-CONF_CANID = 'canid'
-CONF_DATA1 = 'data1'
-CONF_DATA2 = 'data2'
-CONF_DATA3 = 'data3'
-CONF_DATA4 = 'data4'
+uint32_t canid_;
+uint16_t data1_;
+uint16_t data2_;
+uint16_t data3_;
+uint16_t data4_;
 
-CONFIG_SCHEMA = cv.Schema(
-    {
-        cv.GenerateID(): cv.declare_id(RealdashFrame55),
-        cv.Required(CONF_CANID): cv.int_range(min=0, max=0x1FFFFFFF),
-        cv.Optional(CONF_DATA1, default=0): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA2, default=0): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA3, default=0): cv.int_range(min=0, max=65535),
-        cv.Optional(CONF_DATA4, default=0): cv.int_range(min=0, max=65535),
-        
-    }
-#).extend(cv.COMPONENT_SCHEMA)
-).extend(cv.COMPONENT_SCHEMA).extend(uart.UART_DEVICE_SCHEMA)
+void set_canid(uint32_t canid) { this->canid_ = canid; }
+void set_data1(uint16_t data1) { this->data1_ = data1; }
+void set_data2(uint16_t data2) { this->data2_ = data2; }
+void set_data3(uint16_t data3) { this->data3_ = data3; }
+void set_data4(uint16_t data4) { this->data4_ = data4; }
 
-async def to_code(config):
-   var = cg.new_Pvariable(config[CONF_ID])
-   await cg.register_component(var, config)
-   await uart.register_uart_device(var, config)
 
-   cg.add(var.set_canid(config[CONF_CANID]))
-   cg.add(var.set_data1(config[CONF_DATA1]))
-   cg.add(var.set_data2(config[CONF_DATA2]))
-   cg.add(var.set_data3(config[CONF_DATA3]))
-   cg.add(var.set_data4(config[CONF_DATA4]))
+void setup() override
+{
+}
+
+
+void update() override
+{
+  SendCANFramesToSerial();
+  delay(5);
+}
+
+
+void SendCANFramesToSerial()
+{
+  byte buf[8];
+  memcpy(buf, &data1_, 2);
+  memcpy(buf + 2, &data2_, 2);
+  memcpy(buf + 4, &data3_, 2);
+  memcpy(buf + 6, &data4_, 2);
+  RealdashFrame44::SendCANFrameToSerial(canid_, buf);
+ 
+  ESP_LOGI("custom", "Frame44-ID: 0x%08X", this->canid_);
+  ESP_LOGI("custom", "DATA1:      0x%02X", this->data1_);
+  ESP_LOGI("custom", "DATA2:      0x%02X", this->data2_);
+  ESP_LOGI("custom", "DATA3:      0x%02X", this->data3_);
+  ESP_LOGI("custom", "DATA4:      0x%02X", this->data4_);
+
+}
+
+void SendCANFrameToSerial(unsigned long canFrameId, const byte* frameData)
+{
+  const byte serialBlockTag[4] = { 0x55, 0x33, 0x22, 0x11 };
+  write_array(serialBlockTag, 4);
+  write_array((const byte*)&canFrameId, 4);
+  write_array(frameData, 8);
+}
+
+void dump_config() override;
+};
+
+}  // namespace frame55_
+}  // namespace esphome
