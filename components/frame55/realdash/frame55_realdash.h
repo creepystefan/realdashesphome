@@ -23,7 +23,7 @@ void update() override
 {
 }
 
-void SendCANFramesToSerial()
+void SendCANFramesToSerialtext()
 {
   SendTextExtensionFrameToSerial(canid_, "Das ist nur ein Test");
 }
