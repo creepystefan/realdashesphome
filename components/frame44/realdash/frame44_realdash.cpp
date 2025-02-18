@@ -12,7 +12,7 @@ static const char *TAG = "Realdash-Frame44-ID:";
 //void RealdashFrame44::loop() {
 //}
 
-void RealdashFrame55::dump_config(){
+void RealdashFrame44::dump_config(){
     ESP_LOGCONFIG(TAG, "0x%08X", this->canid_);
 }
 
