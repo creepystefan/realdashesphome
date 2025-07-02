@@ -41,50 +41,39 @@ wifi:
 
 captive_portal:
 
-interval:
-  - interval: 1sec
-    then:
-       - uart.write: !lambda
-           return {
-              0x44, 0x33, 0x22, 0x11,
-              0x01, 0x01, 0x01, 0x01,
-              0x01,
-              0x02,
-              0x03,
-              0x04,
-              id(eingabe).state,
-              0x06,
-              0x07, 
-              id(testswitch).state
-             };
-
-
-switch:
-  - platform: template
-    name: test
-    id: testswitch
-    optimistic: true
-
-number:
-  - platform: template
-    name: eingabe
-    id: eingabe
-    step: 1
-    min_value: 0
-    max_value: 255
-    optimistic: true
-
-
 realdash:
-  - platform: frame44
-    canid: 5           
-    data1: 2
-    data2: 4
-    data3: 6
-    data4: 8
-  - platform: frame44
-    canid: 10           
-    data1: 9
-    data2: 10
-    data3: 11
-    data4: 12
+  canid: 44
+  data1: 1
+  data2: 2
+  data3: 3
+  data4: 4
+  sensors:
+    - id: sens1
+      name: sens1
+    - id: sens3
+      name: sens3
+    - id: sens2
+      name: sens2
+
+sensor:
+  - platform: template
+    name: sens1
+    id: sens1
+    update_interval: 1s
+    lambda: |-
+       return 200;
+
+  - platform: template
+    name: sens2
+    id: sens2
+    update_interval: 1s
+    lambda: |-
+       return 40;
+
+  - platform: template
+    name: sens3
+    id: sens3
+    update_interval: 1s
+    lambda: |-
+       return 50;
+
