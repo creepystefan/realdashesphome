@@ -32,3 +32,4 @@ realdash:
 
 # useful link
 - [esphome-uart-link- UART TCP Bridge](https://github.com/nebulous/esphome-uart-link)
+- [RealDash CAN Protokoll](https://github.com/janimm/RealDash-extras/blob/master/RealDash-CAN/realdash-can-protocol.md)
