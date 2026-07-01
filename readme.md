@@ -27,7 +27,11 @@ realdash:
       canid: YOUR CAN ID ADDRESS  9 = 0x00000009
     - id: SECOND ID FROM YOUR ESPHOME Sensor
       canid: YOUR CAN ID ADDRESS for SECOND SENSOR ID   11 = 0x0000000b
-    .....
+
+sensor:
+  - platform: ....
+    id: ... (this is to realdash sensors id)
+
 ```
 
 # useful link
