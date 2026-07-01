@@ -1,5 +1,6 @@
 # ESPHome - Realdash CAN 
 - working with Framework IDF and Arduino
+- incomming Data is "FLOAT",    not "UINT8 UINT16, UINT32"
 
 ```yaml
 external_components:
