@@ -4,11 +4,9 @@
 ```yaml
 external_components:
   - source: github://creepystefan/realdashesphome
+  - source: github://nebulous/esphome-uart-link
     refresh: 0s
-  - source:
-      type: git
-      url: https://github.com/nebulous/esphome-uart-link
-
+  
 uart_tcp_server:
   id: tcp_serial
   port: 5000
