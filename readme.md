@@ -23,10 +23,10 @@ uart_tcp_server:
 realdash:
   uart_id: tcp_serial
   sensors:
-    - id: ID FROM YOUR SENSOR
-      canid: YOUR CAN ID ADDRESS
-    - id: SECOND ID FROM YOUR SENSOR
-      canid: YOUR CAN ID ADDRESS for SECOND SENSOR ID
+    - id: ID FROM YOUR ESPHOME Sensor
+      canid: YOUR CAN ID ADDRESS  9 = 0x00000009
+    - id: SECOND ID FROM YOUR ESPHOME Sensor
+      canid: YOUR CAN ID ADDRESS for SECOND SENSOR ID   11 = 0x0000000b
     .....
 ```
 
