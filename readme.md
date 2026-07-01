@@ -10,7 +10,7 @@ external_components:
   
 uart_tcp_server:
   id: tcp_serial
-  port: 5000
+  port: 35000
   max_clients: 1             # simultaneous connections (default 2, max 16)
   rx_buffer_size: 4096       # per-client ring buffer (default 4096)
   client_mode: fanout        # fanout (default) or exclusive
