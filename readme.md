@@ -27,3 +27,6 @@ realdash:
       canid: YOUR CAN ID ADDRESS for SECOND SENSOR ID
     .....
 ```
+
+# useful link
+- [esphome-uart-link- UART TCP Bridge](https://github.com/nebulous/esphome-uart-link)
