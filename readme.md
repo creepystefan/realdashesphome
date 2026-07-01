@@ -1,8 +1,10 @@
 # ESPHome - Realdash CAN 
 - working with Framework IDF and Arduino
 - incomming Data is "FLOAT",    not "UINT8 UINT16, UINT32"
+- was send with FRAME 44 Format
 - YAML Example is for WIFI Connection to REALDASH (TCP)
 - Cable Connection with uart: also possible
+
 
 ```yaml
 external_components:
