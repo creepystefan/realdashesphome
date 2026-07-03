@@ -5,6 +5,8 @@
 - YAML Example is for WIFI Connection to REALDASH (TCP)
 - Cable Connection with uart: also possible
 
+![alt text] (CAN BUS.jpg "Image Hover Text")
+
 
 ```yaml
 external_components:
