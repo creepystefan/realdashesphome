@@ -6,7 +6,7 @@
 - Cable Connection with uart: also possible
 
 ![alt text](CANBUS.jpg "Image Hover Text")
-![alt text](src/docs/devices/cable.png "Image Hover Text")
+
 
 
 ```yaml
