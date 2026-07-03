@@ -138,14 +138,14 @@ void Realdash::send44(uint32_t canid_, uint32_t data1) {
   data[pos++] = canid_ >> 16;
   data[pos++] = canid_ >> 24;
   // 8 Bytes Data
-  data[pos++] = 0x00;
-  data[pos++] = 0x00;
-  data[pos++] = 0x00;
-  data[pos++] = 0x00;
   data[pos++] = data1 >> 24;
   data[pos++] = data1 >> 16;
   data[pos++] = data1 >> 8;
   data[pos++] = data1 >> 0;
+  data[pos++] = 0x00;
+  data[pos++] = 0x00;
+  data[pos++] = 0x00;
+  data[pos++] = 0x00;
 
   this->write_array(data, pos);
   this->flush();
