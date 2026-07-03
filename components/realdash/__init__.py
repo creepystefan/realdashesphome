@@ -25,7 +25,7 @@ CONFIG_SENSORS_SCHEMA = cv.Schema(
     {
         cv.Required(CONF_ID): cv.use_id(sensor.Sensor),
         #cv.Required(CONF_NAME): cv.string_strict,
-        cv.Required(CONF_CANID): cv.int_range(min=0, max=0x1FFFFFFF),
+        cv.Required(CONF_CANID): cv.int_range(min=0, max=0xFFFFFFFF),
     }
 )
 
@@ -33,7 +33,7 @@ CONFIG_BINARY_SENSORS_SCHEMA = cv.Schema(
     {
         cv.Required(CONF_ID): cv.use_id(binary_sensor.BinarySensor),
         #cv.Required(CONF_NAME): cv.string_strict,
-        cv.Required(CONF_CANID): cv.int_range(min=0, max=0x1FFFFFFF),
+        cv.Required(CONF_CANID): cv.int_range(min=0, max=0xFFFFFFFF),
     }
 )
 
