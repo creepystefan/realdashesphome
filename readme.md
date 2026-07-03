@@ -23,14 +23,42 @@ uart_tcp_server:
 realdash:
   uart_id: tcp_serial
   sensors:
-    - id: ID FROM YOUR ESPHOME Sensor
-      canid: YOUR CAN ID ADDRESS  9 = 0x00000009
-    - id: SECOND ID FROM YOUR ESPHOME Sensor
-      canid: YOUR CAN ID ADDRESS for SECOND SENSOR ID   11 = 0x0000000b
+    - id: sens1         # Sensor ID
+      canid: 500        # same HEX 0x000001f4
+    - id: sens2         # Sensor ID
+      canid: 0xa1234567 # same DEC 2703443303
 
+number:
+  - platform: template
+    name: eingabe1
+    id: eingabe1
+    step: 1
+    min_value: 0
+    max_value: 65535
+    optimistic: true
+  - platform: template
+    name: eingabe2
+    id: eingabe2
+    step: 0.1
+    min_value: 0
+    max_value: 4294967295
+    optimistic: true
+    
 sensor:
-  - platform: ....
-    id: ... (this is to realdash sensors id)
+  - platform: template
+    name: sens1
+    id: sens1
+    update_interval: 1s
+    lambda: |-
+       return id(eingabe1).state;
+
+  - platform: template
+    name: sens2
+    id: sens2
+    update_interval: 1s
+    lambda: |-
+       return id(eingabe2).state;
+
 
 ```
 
