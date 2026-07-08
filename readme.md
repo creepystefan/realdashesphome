@@ -7,6 +7,28 @@
 
 ![alt text](CANBUS.jpg "Image Hover Text")
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RealDash CAN XML description file, version 2 Requires RealDash version 1.5.8 or newer -->
+<RealDashCAN version="2">
+ 
+  <frames>
+  
+    <frame id="0x1">
+      <value name="FLOAT1 from id" offset="0" length="4" float="true"></value>
+      <value name="FLOAT2 from id2" offset="4" length="4" float="true"></value>
+    </frame>
+    
+    <frame id="0x2">
+      <value name="FLOAT1 from id" offset="0" length="4" float="true"></value>
+    </frame>
+
+   
+  </frames>
+</RealDashCAN>
+
+```
+
 
 
 ```yaml
