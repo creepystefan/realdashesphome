@@ -26,10 +26,12 @@ uart_tcp_server:
 realdash:
   uart_id: tcp_serial
   sensors:
-    - id: sens1         # Sensor ID
-      canid: 500        # same HEX 0x000001f4
-    - id: sens2         # Sensor ID
-      canid: 0xa1234567 # same DEC 2703443303
+    - canid: 500        # same HEX 0x000001f4
+      id: sens1         # Sensor ID
+      id2: sens2        # Sensor ID
+    - canid: 0xa1234567 # same DEC 2703443303
+      id: sens2         # Sensor ID, if not use id2 = id2 frame = 00 00 00 00
+
 
 number:
   - platform: template
