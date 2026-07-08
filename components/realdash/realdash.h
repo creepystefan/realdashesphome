@@ -30,12 +30,10 @@ class Realdash : public uart::UARTDevice, public Component {
  Realdash() = default;
 
 #ifdef USE_SENSOR
-  //void register_sensor(const char *name, esphome::sensor::Sensor *sensor);
-  void register_sensor(uint32_t canid, esphome::sensor::Sensor *sensor);
+  void register_sensor(uint32_t canid, esphome::sensor::Sensor *sensor, esphome::sensor::Sensor *sensor2 = nullptr);
 #endif
 
 #ifdef USE_BINARY_SENSOR
-  //void register_binary_sensor(const char *name, esphome::binary_sensor::BinarySensor *binary_sensor);
   void register_binary_sensor(uint32_t canid, esphome::binary_sensor::BinarySensor *binary_sensor);
 #endif
 
@@ -44,7 +42,8 @@ void register_device(RealdashDevice *device) { this->devices_.push_back(device);
 void setup() override;
 void loop() override;
 void dump_config() override;
-void send44(uint32_t canid_, uint32_t data1);
+void send44(uint32_t canid_, uint32_t data1, uint32_t data2 );
+//void send44_2(uint32_t canid_, uint32_t data1, uint32_t data2);
 void send66(uint32_t canid_, uint8_t size_identifier, const uint8_t *payload, size_t payload_len);
 void send_text(uint32_t canid_);
 //void read44();
@@ -52,10 +51,6 @@ void send_text(uint32_t canid_);
 void send_data(const uint8_t *data, uint8_t len);
 void can_speed(uint8_t can_speed);
 void can_mode(uint8_t can_mode);
-//void set_canid(uint32_t canid) { this->canid_ = canid; }
-
-//float get_setup_priority() const override;
-
 
  private:
   uint32_t canid_;
@@ -68,6 +63,8 @@ void can_mode(uint8_t can_mode);
     //union {
   #ifdef USE_SENSOR
       esphome::sensor::Sensor *sensor;
+      esphome::sensor::Sensor *sensor2;
+
       
   #endif
   #ifdef USE_BINARY_SENSOR
@@ -91,8 +88,8 @@ class RealdashDevice {
   void send66(uint32_t canid_, uint8_t size_identifier, const uint8_t *payload, size_t payload_len) {
     this->parent_->send66(canid_, size_identifier, payload, payload_len); }
 
-  void send44(uint32_t canid_, uint32_t data1 = 0) {
-    this->parent_->send44(canid_, data1); }
+  void send44(uint32_t canid_, uint32_t data1 = 0, uint32_t data2 = 0) {
+    this->parent_->send44(canid_, data1, data2); }
 
   void can_speed(uint8_t can_speed) {
     this->parent_->can_speed(can_speed); }
