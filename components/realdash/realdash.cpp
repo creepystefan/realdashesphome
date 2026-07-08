@@ -14,14 +14,20 @@ void Realdash::setup() {
 
 
 #ifdef USE_SENSOR
-void Realdash::register_sensor(uint32_t canid, esphome::sensor::Sensor *sensor) {
+
+  void Realdash::register_sensor(uint32_t canid, esphome::sensor::Sensor *sensor, esphome::sensor::Sensor *sensor2) {
+  
   sensors_t s;
   s.canid = canid;
   s.sensor = sensor;
+  s.sensor2 = sensor2;
   s.type = TYPE_SENSOR;
-  this->sensors_.push_back(s);
- }
+    this->sensors_.push_back(s);
+
+  }
+
 #endif
+
 
 #ifdef USE_BINARY_SENSOR
 void Realdash::register_binary_sensor(uint32_t canid, esphome::binary_sensor::BinarySensor *binary_sensor) {
@@ -29,7 +35,7 @@ void Realdash::register_binary_sensor(uint32_t canid, esphome::binary_sensor::Bi
   s.canid = canid;
   s.binary_sensor = binary_sensor;
   this->sensors_.push_back(s);
-}
+  }
 #endif
 
 
@@ -41,10 +47,14 @@ void Realdash::loop() {
 #ifdef USE_SENSOR
       case TYPE_SENSOR:
         if (!s.sensor->has_state()) {
-          continue;
+        continue;
         }
-                        
-               
+       if (s.sensor2 == nullptr) {
+        uint32_t test = 0x00;       
+        send44(s.canid, *(uint32_t*) &s.sensor->state, test);
+       } else {
+        send44(s.canid, *(uint32_t*) &s.sensor->state, *(uint32_t*) &s.sensor2->state);
+       } 
         //send it in uint16_t 
         //send44(s.canid, (uint16_t)s.sensor->state);
         //ESP_LOGD(TAG, "uint16_t  %04x", (uint16_t)s.sensor->state);
@@ -53,8 +63,6 @@ void Realdash::loop() {
         //send44(s.canid, (uint32_t)s.sensor->state);
         //ESP_LOGD(TAG, "uint32_t  %08x", (uint32_t)s.sensor->state);
           
-        //send it in float 4 byte
-        send44(s.canid, *(uint32_t*) &s.sensor->state);
         break;
 #endif
 #ifdef USE_BINARY_SENSOR
@@ -122,31 +130,32 @@ void Realdash::send66(uint32_t canid_, uint8_t size_identifier, const uint8_t *p
   
 }
 
-void Realdash::send44(uint32_t canid_, uint32_t data1) {   
+void Realdash::send44(uint32_t canid_, uint32_t data1, uint32_t data2) {   
   
   uint8_t data[MAX_FRAME_SIZE];
   size_t pos = 0;
   
-  // 4 byte header Frame 44
+    // 4 byte header Frame 44
   data[pos++] = 0x44;
   data[pos++] = 0x33;
   data[pos++] = 0x22;
   data[pos++] = 0x11;
-  //4 byte CAN ID Address
+     //4 byte CAN ID Address
   data[pos++] = canid_ >> 0;
   data[pos++] = canid_ >> 8;
   data[pos++] = canid_ >> 16;
   data[pos++] = canid_ >> 24;
-  // 8 Bytes Data
+    // 4 Bytes Data1
   data[pos++] = data1 >> 24;
   data[pos++] = data1 >> 16;
   data[pos++] = data1 >> 8;
   data[pos++] = data1 >> 0;
-  data[pos++] = 0x00;
-  data[pos++] = 0x00;
-  data[pos++] = 0x00;
-  data[pos++] = 0x00;
-
+  // 4 Bytes Data2
+  data[pos++] = data2 >> 24;
+  data[pos++] = data2 >> 16;
+  data[pos++] = data2 >> 8;
+  data[pos++] = data2 >> 0;
+  
   this->write_array(data, pos);
   this->flush();
 //ESP_LOGD(TAG, "CAN-ID: %08x  DATA: %02x%02x%02x%02x  %02x%02x%02x%02x ",
@@ -193,6 +202,7 @@ void Realdash::can_speed(uint8_t can_speed){
   data[pos++] = crc_result >> 16;
   data[pos++] = crc_result >> 24;
   this->write_array(data, pos);
+  this->flush();
   }
 
 void Realdash::can_mode(uint8_t can_mode){
